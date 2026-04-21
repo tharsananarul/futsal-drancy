@@ -6,10 +6,11 @@ import { defineConfig, loadEnv } from 'vite';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export default defineConfig(({mode}) => {
+export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, '.', '');
+  const isProd = command === 'build';
   return {
-    base: '/futsal-drancy/',
+    base: isProd ? '/futsal-drancy/' : '/',
     plugins: [react(), tailwindcss()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),

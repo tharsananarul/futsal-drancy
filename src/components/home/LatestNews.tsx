@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowUpRight, Calendar, User } from 'lucide-react';
+import { getAssetPath } from '../../utils/assets';
 
 const NEWS = [
   {
@@ -8,7 +9,7 @@ const NEWS = [
     title: 'Drancy triomphe face à Toulouse dans un match épique',
     date: '18 AVRIL 2026',
     author: 'Equipe Communication',
-    image: '/futsal-drancy/images/1.png',
+    image: getAssetPath('images/1.png'),
   },
   {
     id: 2,
@@ -16,7 +17,7 @@ const NEWS = [
     title: 'Ouverture des inscriptions pour l\'académie des jeunes',
     date: '15 AVRIL 2026',
     author: 'Direction Sportive',
-    image: '/futsal-drancy/images/2.png',
+    image: getAssetPath('images/2.png'),
   },
   {
     id: 3,
@@ -24,7 +25,7 @@ const NEWS = [
     title: 'Nouveau renfort brésilien pour l\'équipe première',
     date: '10 AVRIL 2026',
     author: 'Staff Technique',
-    image: '/futsal-drancy/images/3.png',
+    image: getAssetPath('images/3.png'),
   }
 ];
 

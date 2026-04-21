@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { getAssetPath } from '../../utils/assets';
 
 const MATCHES = [
   { team1: 'ST PIERRE', team2: 'DRANCY', score1: 2, score2: 5, date: 'TERMINE' },
@@ -23,7 +24,7 @@ export default function MatchTicker() {
             <div className="flex items-center space-x-3">
               <div className="flex items-center space-x-2">
                 {match.team1 === 'DRANCY' && (
-                  <img src="/futsal-drancy/logo/futsal-logo.png" alt="FD" className="w-5 h-5 object-contain" />
+                  <img src={getAssetPath('logo/futsal-logo.png')} alt="FD" className="w-5 h-5 object-contain" />
                 )}
                 <span className={`font-display font-black text-xs uppercase ${match.team1 === 'DRANCY' ? 'text-white' : 'text-white/50'}`}>
                   {match.team1}
@@ -41,7 +42,7 @@ export default function MatchTicker() {
                   {match.team2}
                 </span>
                 {match.team2 === 'DRANCY' && (
-                  <img src="/futsal-drancy/logo/futsal-logo.png" alt="FD" className="w-5 h-5 object-contain" />
+                  <img src="/logo/futsal-logo.png" alt="FD" className="w-5 h-5 object-contain" />
                 )}
               </div>
             </div>

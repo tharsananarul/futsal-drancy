@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { getAssetPath } from '../../utils/assets';
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <img src="/futsal-drancy/logo/futsal-logo.png" className="w-10 h-10 object-contain" alt="Logo" />
+              <img src={getAssetPath('logo/futsal-logo.png')} className="w-10 h-10 object-contain" alt="Logo" />
               <span className="font-display font-black text-lg uppercase">Futsal Drancy</span>
             </div>
             <p className="text-accent font-black tracking-[0.2em] uppercase text-[9px] italic">
