@@ -80,7 +80,7 @@ export const CLUB_DATA = {
       name: 'Maillot Officiel Domicile 25/26',
       price: '75€',
       category: 'Tenues',
-      image: getAssetPath('images/9.png'),
+      image: getAssetPath('images/jersey-shop.png'),
       badge: 'Populaire'
     },
     {
@@ -88,7 +88,7 @@ export const CLUB_DATA = {
       name: 'Veste de Sortie Elite',
       price: '85€',
       category: 'Lifestyle',
-      image: getAssetPath('images/10.png'),
+      image: getAssetPath('images/jacket-shop.png'),
       badge: 'Nouveau'
     },
     {
@@ -96,7 +96,7 @@ export const CLUB_DATA = {
       name: 'Écharpe Futsal Drancy',
       price: '15€',
       category: 'Accessoires',
-      image: getAssetPath('images/IMG-20250528-WA0002.jpg'),
+      image: getAssetPath('images/scarf-shop.png'),
       badge: null
     },
     {
@@ -104,7 +104,7 @@ export const CLUB_DATA = {
       name: 'Sac de Sport Club',
       price: '45€',
       category: 'Équipement',
-      image: getAssetPath('images/IMG-20250528-WA0006.jpg'),
+      image: getAssetPath('images/bag-shop.png'),
       badge: null
     }
   ],
