@@ -10,8 +10,9 @@ import NewsPage from './pages/News';
 import { motion, AnimatePresence } from 'motion/react';
 
 function App() {
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
   return (
-    <Router basename="/futsal-drancy">
+    <Router basename={basename}>
       <Layout>
         <AnimatePresence mode="wait">
           <Routes>
