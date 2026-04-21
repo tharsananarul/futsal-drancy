@@ -1,56 +1,10 @@
 import { motion } from 'motion/react';
 import { Calendar, User, ArrowUpRight } from 'lucide-react';
 import { getAssetPath } from '../utils/assets';
-
-const ALL_NEWS = [
-  {
-    id: 1,
-    category: 'Club',
-    title: 'Le Futsal Drancy recherche des Bénévoles et des Coachs',
-    date: '21 AVRIL 2026',
-    author: 'Direction du Club',
-    image: getAssetPath('images/4.png'),
-    excerpt: 'Nous recherchons des personnes passionnées pour encadrer nos équipes et participer à la vie du club. Rejoignez l\'aventure !'
-  },
-  {
-    id: 2,
-    category: 'Match',
-    title: 'Drancy triomphe face à Toulouse dans un match épique',
-    date: '18 AVRIL 2026',
-    author: 'Equipe Communication',
-    image: getAssetPath('images/5.png'),
-    excerpt: 'Dans un match riche en émotions au Palais des Sports, nos joueurs ont su faire la différence en seconde période...'
-  },
-  {
-    id: 3,
-    category: 'Club',
-    title: 'Ouverture des inscriptions pour l\'académie des jeunes',
-    date: '15 AVRIL 2026',
-    author: 'Direction Sportive',
-    image: getAssetPath('images/6.png'),
-    excerpt: 'Les inscriptions pour la saison 2025-2026 sont officiellement ouvertes pour toutes les catégories d\'âge...'
-  },
-  {
-    id: 4,
-    category: 'Transfert',
-    title: 'Nouveau renfort brésilien pour l\'équipe première',
-    date: '10 AVRIL 2026',
-    author: 'Staff Technique',
-    image: getAssetPath('images/7.png'),
-    excerpt: 'Le club est fier d\'annoncer l\'arrivée de Junior Silva, ailier de talent en provenance de São Paulo...'
-  },
-  {
-    id: 5,
-    category: 'Événement',
-    title: 'Gala annuel du Futsal Drancy : Une soirée inoubliable',
-    date: '05 AVRIL 2026',
-    author: 'Equipe Communication',
-    image: getAssetPath('images/8.png'),
-    excerpt: 'Retour sur la soirée de gala qui a réuni joueurs, partenaires et supporters pour célébrer nos 20 ans...'
-  }
-];
+import { CLUB_DATA } from '../data/clubData';
 
 export default function NewsPage() {
+  const allNews = CLUB_DATA.news;
   return (
     <div className="pt-32 pb-24 bg-navy-dark min-h-screen">
       <div className="section-container">
@@ -69,8 +23,8 @@ export default function NewsPage() {
           </h1>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {ALL_NEWS.map((item, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {allNews.map((item, idx) => (
             <motion.article
               key={item.id}
               initial={{ opacity: 0, scale: 0.95 }}

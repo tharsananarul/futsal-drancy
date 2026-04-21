@@ -1,20 +1,15 @@
 import { motion } from 'motion/react';
-
-const PLAYERS = [
-  { name: 'Ricardo S.', role: 'Pivot / Capitaine', number: '10', image: 'https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?q=80&w=2670&auto=format&fit=crop' },
-  { name: 'Hamza B.', role: 'Fixe', number: '4', image: 'https://images.unsplash.com/photo-1431324155629-1a6eda1dc3f7?q=80&w=2670&auto=format&fit=crop' },
-  { name: 'Lucas M.', role: 'Ailier', number: '7', image: 'https://images.unsplash.com/photo-1544606114-1e5828453664?q=80&w=2670&auto=format&fit=crop' },
-  { name: 'Yannis K.', role: 'Gardien', number: '1', image: 'https://images.unsplash.com/photo-1510566337590-2fc1f21d0faa?q=80&w=2670&auto=format&fit=crop' },
-  { name: 'Enzo F.', role: 'Ailier', number: '11', image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2670&auto=format&fit=crop' },
-  { name: 'Sofiane R.', role: 'Fixe', number: '5', image: 'https://images.unsplash.com/photo-1517466787929-bc9406155b08?q=80&w=2670&auto=format&fit=crop' },
-];
+import { CLUB_DATA } from '../data/clubData';
 
 export default function Team() {
+  const players = CLUB_DATA.players;
+  const season = CLUB_DATA.season;
+  
   return (
     <div className="pt-32 pb-24 bg-primary min-h-screen">
       <div className="section-container">
         <div className="text-center space-y-4 mb-20">
-          <span className="text-accent font-black tracking-[0.3em] uppercase text-xs italic">Effectif 24/25</span>
+          <span className="text-accent font-black tracking-[0.3em] uppercase text-xs italic">Effectif {season}</span>
           <h1 className="text-5xl md:text-8xl text-white">L'Équipe <br/> Première</h1>
         </div>
 
@@ -27,7 +22,7 @@ export default function Team() {
           }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
         >
-          {PLAYERS.map((player, idx) => (
+          {players.map((player, idx) => (
             <motion.div
               key={idx}
               variants={{

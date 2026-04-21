@@ -29,11 +29,11 @@ export default function Hero() {
             className="space-y-2"
           >
             <span className="text-accent font-black tracking-[0.4em] uppercase text-[9px] md:text-[10px] italic block">
-              Un État d'Esprit, une Attitude
+              {CLUB_DATA.motto}
             </span>
             <div className="inline-flex">
               <span className="bg-white/10 text-white px-4 py-1.5 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] backdrop-blur-sm">
-                Saison 2025-2026
+                Saison {CLUB_DATA.season}
               </span>
             </div>
           </motion.div>
@@ -75,16 +75,16 @@ export default function Hero() {
             <div className="flex items-center justify-between relative z-10 my-4 px-2 md:px-4">
               <div className="text-center">
                 <img src={getAssetPath('logo/futsal-logo.png')} className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 opacity-100 drop-shadow-[0_0_15px_rgba(245,185,9,0.3)]" alt="FD" />
-                <div className="text-6xl md:text-8xl lg:text-9xl font-black italic text-white tracking-tighter leading-none">4</div>
+                <div className="text-6xl md:text-8xl lg:text-9xl font-black italic text-white tracking-tighter leading-none">{latestResult.homeScore}</div>
               </div>
               <div className="text-white/20 font-black text-3xl md:text-5xl italic tracking-tighter">VS</div>
               <div className="text-center">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-xl md:rounded-2xl mx-auto mb-3 md:mb-4 flex items-center justify-center font-black text-xs border border-white/10">PAC</div>
-                <div className="text-6xl md:text-8xl lg:text-9xl font-black italic text-white tracking-tighter leading-none">2</div>
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-xl md:rounded-2xl mx-auto mb-3 md:mb-4 flex items-center justify-center font-black text-xs border border-white/10">{latestResult.awayTeam}</div>
+                <div className="text-6xl md:text-8xl lg:text-9xl font-black italic text-white tracking-tighter leading-none">{latestResult.awayScore}</div>
               </div>
             </div>
             <span className="text-[10px] md:text-xs text-center text-green-400 font-black uppercase tracking-[0.4em] italic bg-green-400/10 py-3 rounded-xl border border-green-400/20">
-              Victoire à Domicile
+              {latestResult.resultText}
             </span>
           </div>
 
@@ -94,15 +94,15 @@ export default function Hero() {
             </div>
             <span className="text-xs md:text-sm uppercase tracking-[0.4em] text-gray-400 font-black italic">Prochain Match</span>
             <div className="flex flex-col items-center justify-center gap-4 my-auto relative z-10">
-              <div className="text-base md:text-lg lg:text-xl font-black uppercase text-white tracking-[0.2em] text-center">Palais des Sports</div>
+              <div className="text-base md:text-lg lg:text-xl font-black uppercase text-white tracking-[0.2em] text-center">{nextMatch.venue}</div>
               <div className="w-16 md:w-24 h-[2px] md:h-[3px] bg-accent/40 my-1"></div>
-              <div className="text-sm md:text-base lg:text-lg font-black uppercase text-accent italic tracking-widest text-center">Sam. 26 Avril • 18:00</div>
+              <div className="text-sm md:text-base lg:text-lg font-black uppercase text-accent italic tracking-widest text-center">{nextMatch.date} • {nextMatch.time}</div>
               
               <div className="mt-4 md:mt-6 flex flex-col items-center">
                 <div className="px-6 md:px-8 py-2 md:py-3 bg-white/5 border border-white/10 rounded-full text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-white/60 backdrop-blur-md text-center">
-                  Entrée Gratuite
+                  {nextMatch.info}
                 </div>
-                <span className="mt-3 md:mt-4 text-[9px] md:text-[10px] text-white/30 font-bold uppercase tracking-widest">Gymnase Joliot Curie</span>
+                <span className="mt-3 md:mt-4 text-[9px] md:text-[10px] text-white/30 font-bold uppercase tracking-widest">{nextMatch.gym}</span>
               </div>
             </div>
           </div>

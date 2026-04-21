@@ -1,43 +1,10 @@
 import { motion } from 'motion/react';
 import { ShoppingBag, Star, Tag, ArrowRight } from 'lucide-react';
 import { getAssetPath } from '../utils/assets';
-
-const PRODUCTS = [
-  {
-    id: 1,
-    name: 'Maillot Officiel Domicile 25/26',
-    price: '75€',
-    category: 'Tenues',
-    image: getAssetPath('images/9.png'),
-    badge: 'Populaire'
-  },
-  {
-    id: 2,
-    name: 'Veste de Sortie Elite',
-    price: '85€',
-    category: 'Lifestyle',
-    image: getAssetPath('images/10.png'),
-    badge: 'Nouveau'
-  },
-  {
-    id: 3,
-    name: 'Écharpe Futsal Drancy',
-    price: '15€',
-    category: 'Accessoires',
-    image: getAssetPath('images/IMG-20250528-WA0002.jpg'),
-    badge: null
-  },
-  {
-    id: 4,
-    name: 'Sac de Sport Club',
-    price: '45€',
-    category: 'Équipement',
-    image: getAssetPath('images/IMG-20250528-WA0006.jpg'),
-    badge: null
-  }
-];
+import { CLUB_DATA } from '../data/clubData';
 
 export default function Boutique() {
+  const products = CLUB_DATA.products;
   return (
     <div className="pt-32 pb-24 bg-navy-dark min-h-screen">
       <div className="section-container">
@@ -57,7 +24,7 @@ export default function Boutique() {
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {PRODUCTS.map((product, idx) => (
+          {products.map((product, idx) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 20 }}

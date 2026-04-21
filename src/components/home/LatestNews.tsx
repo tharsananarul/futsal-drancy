@@ -1,35 +1,10 @@
 import { motion } from 'motion/react';
 import { ArrowUpRight, Calendar, User } from 'lucide-react';
 import { getAssetPath } from '../../utils/assets';
-
-const NEWS = [
-  {
-    id: 1,
-    category: 'Match',
-    title: 'Drancy triomphe face à Toulouse dans un match épique',
-    date: '18 AVRIL 2026',
-    author: 'Equipe Communication',
-    image: getAssetPath('images/1.png'),
-  },
-  {
-    id: 2,
-    category: 'Club',
-    title: 'Ouverture des inscriptions pour l\'académie des jeunes',
-    date: '15 AVRIL 2026',
-    author: 'Direction Sportive',
-    image: getAssetPath('images/2.png'),
-  },
-  {
-    id: 3,
-    category: 'Transfert',
-    title: 'Nouveau renfort brésilien pour l\'équipe première',
-    date: '10 AVRIL 2026',
-    author: 'Staff Technique',
-    image: getAssetPath('images/3.png'),
-  }
-];
+import { CLUB_DATA } from '../../data/clubData';
 
 export default function LatestNews() {
+  const newsItems = CLUB_DATA.news.slice(0, 3);
   return (
     <section className="bg-navy-dark py-24 relative overflow-hidden">
       {/* Decorative background element */}
@@ -48,7 +23,7 @@ export default function LatestNews() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {NEWS.map((item, idx) => (
+          {newsItems.map((item, idx) => (
             <motion.article
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
