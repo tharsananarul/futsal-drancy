@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Menu, X, Instagram, Facebook } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { getAssetPath } from '../../utils/assets';
 
 const NAV_LINKS = [
   { name: 'Accueil', path: '/' },

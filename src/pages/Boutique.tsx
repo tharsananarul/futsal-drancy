@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ShoppingBag, Star, Tag } from 'lucide-react';
+import { ShoppingBag, Star, Tag, ArrowRight } from 'lucide-react';
 import { getAssetPath } from '../utils/assets';
 
 const PRODUCTS = [
