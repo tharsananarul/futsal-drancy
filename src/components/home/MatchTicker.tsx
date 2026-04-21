@@ -21,17 +21,29 @@ export default function MatchTicker() {
           <div key={i} className="inline-flex items-center px-8 border-r border-white/5 group cursor-default">
             <span className="text-[10px] font-bold text-accent mr-4 tracking-tighter italic uppercase">{match.date}</span>
             <div className="flex items-center space-x-3">
-              <span className={`font-display font-black text-xs uppercase ${match.team1 === 'DRANCY' ? 'text-white' : 'text-white/50'}`}>
-                {match.team1}
-              </span>
+              <div className="flex items-center space-x-2">
+                {match.team1 === 'DRANCY' && (
+                  <img src="/futsal-drancy/logo/futsal-logo.png" alt="FD" className="w-5 h-5 object-contain" />
+                )}
+                <span className={`font-display font-black text-xs uppercase ${match.team1 === 'DRANCY' ? 'text-white' : 'text-white/50'}`}>
+                  {match.team1}
+                </span>
+              </div>
+              
               <div className="bg-white/10 px-2 py-0.5 rounded-sm flex items-center space-x-1 border border-white/5">
                 <span className="font-display font-black text-xs text-accent italic">{match.score1}</span>
                 {typeof match.score1 === 'number' && <span className="text-white/20">-</span>}
                 <span className="font-display font-black text-xs text-accent italic">{match.score2}</span>
               </div>
-              <span className={`font-display font-black text-xs uppercase ${match.team2 === 'DRANCY' ? 'text-white' : 'text-white/50'}`}>
-                {match.team2}
-              </span>
+
+              <div className="flex items-center space-x-2">
+                <span className={`font-display font-black text-xs uppercase ${match.team2 === 'DRANCY' ? 'text-white' : 'text-white/50'}`}>
+                  {match.team2}
+                </span>
+                {match.team2 === 'DRANCY' && (
+                  <img src="/futsal-drancy/logo/futsal-logo.png" alt="FD" className="w-5 h-5 object-contain" />
+                )}
+              </div>
             </div>
           </div>
         ))}
