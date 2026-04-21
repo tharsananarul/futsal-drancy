@@ -2,8 +2,10 @@ import { motion } from 'motion/react';
 import { ArrowRight, Play, Trophy } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { getAssetPath } from '../../utils/assets';
+import { CLUB_DATA } from '../../data/clubData';
 
 export default function Hero() {
+  const { latestResult, nextMatch, season, motto } = CLUB_DATA;
   return (
     <section className="relative min-h-screen md:h-screen flex items-start md:items-center bg-navy-dark hero-gradient pt-24 md:pt-0 overflow-hidden">
       {/* Background Decor - Large Logo Watermark */}
