@@ -44,7 +44,7 @@ export default function Navbar() {
             className="w-10 h-10 md:w-16 md:h-16 relative overflow-hidden flex items-center justify-center"
           >
             <img 
-              src="/futsal-drancy/logo/futsal logo.png" 
+              src="/futsal-drancy/logo/futsal-logo.png" 
               alt="Futsal Drancy Logo" 
               className="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(245,185,9,0.3)]"
             />
