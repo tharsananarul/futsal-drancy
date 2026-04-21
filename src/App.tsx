@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from 'motion/react';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/futsal-drancy">
       <Layout>
         <AnimatePresence mode="wait">
           <Routes>
