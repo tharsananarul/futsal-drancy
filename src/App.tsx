@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import Team from './pages/Team';
@@ -10,11 +10,8 @@ import NewsPage from './pages/News';
 import { motion, AnimatePresence } from 'motion/react';
 
 function App() {
-  // Déterminer le basename dynamiquement
-  const basename = import.meta.env.DEV ? '/' : '/futsal-drancy';
-  
   return (
-    <Router basename={basename}>
+    <Router>
       <Layout>
         <AnimatePresence mode="wait">
           <Routes>
