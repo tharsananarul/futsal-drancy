@@ -74,7 +74,7 @@ export default function Hero() {
             <span className="text-xs md:text-sm uppercase tracking-[0.4em] text-accent font-black italic">Dernier Résultat</span>
             <div className="flex items-center justify-between relative z-10 my-4 px-2 md:px-4">
               <div className="text-center">
-                <img src="/logo/futsal logo.png" className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 opacity-100 drop-shadow-[0_0_15px_rgba(245,185,9,0.3)]" alt="FD" />
+                <img src={getAssetPath('logo/futsal-logo.png')} className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 opacity-100 drop-shadow-[0_0_15px_rgba(245,185,9,0.3)]" alt="FD" />
                 <div className="text-6xl md:text-8xl lg:text-9xl font-black italic text-white tracking-tighter leading-none">4</div>
               </div>
               <div className="text-white/20 font-black text-3xl md:text-5xl italic tracking-tighter">VS</div>

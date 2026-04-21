@@ -42,7 +42,7 @@ export default function MatchTicker() {
                   {match.team2}
                 </span>
                 {match.team2 === 'DRANCY' && (
-                  <img src="/logo/futsal-logo.png" alt="FD" className="w-5 h-5 object-contain" />
+                  <img src={getAssetPath('logo/futsal-logo.png')} alt="FD" className="w-5 h-5 object-contain" />
                 )}
               </div>
             </div>

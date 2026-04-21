@@ -3,6 +3,7 @@ import MatchTicker from '../components/home/MatchTicker';
 import LatestNews from '../components/home/LatestNews';
 import StatsOverview from '../components/home/StatsOverview';
 import { motion } from 'motion/react';
+import { getAssetPath } from '../utils/assets';
 import { Trophy, Users, Calendar, ArrowRight } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
@@ -17,7 +18,7 @@ export default function Home() {
         {/* Background accent */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/5 -skew-x-12 translate-x-1/2"></div>
         <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/4 w-[40vw] h-[40vw] opacity-[0.02] pointer-events-none">
-          <img src="/logo/futsal logo.png" alt="" className="w-full h-full object-contain" />
+          <img src={getAssetPath('logo/futsal-logo.png')} alt="" className="w-full h-full object-contain" />
         </div>
         
         <div className="section-container grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
