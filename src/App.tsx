@@ -10,7 +10,9 @@ import NewsPage from './pages/News';
 import { motion, AnimatePresence } from 'motion/react';
 
 function App() {
-  const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
+  // Déterminer le basename dynamiquement
+  const basename = import.meta.env.DEV ? '/' : '/futsal-drancy';
+  
   return (
     <Router basename={basename}>
       <Layout>
