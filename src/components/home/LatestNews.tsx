@@ -8,7 +8,7 @@ const NEWS = [
     title: 'Drancy triomphe face à Toulouse dans un match épique',
     date: '18 AVRIL 2026',
     author: 'Equipe Communication',
-    image: '/images/1.png',
+    image: '/futsal-drancy/images/1.png',
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const NEWS = [
     title: 'Ouverture des inscriptions pour l\'académie des jeunes',
     date: '15 AVRIL 2026',
     author: 'Direction Sportive',
-    image: '/images/2.png',
+    image: '/futsal-drancy/images/2.png',
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const NEWS = [
     title: 'Nouveau renfort brésilien pour l\'équipe première',
     date: '10 AVRIL 2026',
     author: 'Staff Technique',
-    image: '/images/3.png',
+    image: '/futsal-drancy/images/3.png',
   }
 ];
 

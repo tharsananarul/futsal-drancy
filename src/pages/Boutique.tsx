@@ -7,7 +7,7 @@ const PRODUCTS = [
     name: 'Maillot Officiel Domicile 25/26',
     price: '75€',
     category: 'Tenues',
-    image: '/images/9.png',
+    image: '/futsal-drancy/images/9.png',
     badge: 'Populaire'
   },
   {
@@ -15,7 +15,7 @@ const PRODUCTS = [
     name: 'Veste de Sortie Elite',
     price: '85€',
     category: 'Lifestyle',
-    image: '/images/10.png',
+    image: '/futsal-drancy/images/10.png',
     badge: 'Nouveau'
   },
   {
@@ -23,7 +23,7 @@ const PRODUCTS = [
     name: 'Écharpe Futsal Drancy',
     price: '15€',
     category: 'Accessoires',
-    image: '/images/IMG-20250528-WA0002.jpg',
+    image: '/futsal-drancy/images/IMG-20250528-WA0002.jpg',
     badge: null
   },
   {
@@ -31,7 +31,7 @@ const PRODUCTS = [
     name: 'Sac de Sport Club',
     price: '45€',
     category: 'Équipement',
-    image: '/images/IMG-20250528-WA0006.jpg',
+    image: '/futsal-drancy/images/IMG-20250528-WA0006.jpg',
     badge: null
   }
 ];

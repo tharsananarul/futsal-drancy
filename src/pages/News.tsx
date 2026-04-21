@@ -8,7 +8,7 @@ const ALL_NEWS = [
     title: 'Le Futsal Drancy recherche des Bénévoles et des Coachs',
     date: '21 AVRIL 2026',
     author: 'Direction du Club',
-    image: '/images/4.png',
+    image: '/futsal-drancy/images/4.png',
     excerpt: 'Nous recherchons des personnes passionnées pour encadrer nos équipes et participer à la vie du club. Rejoignez l\'aventure !'
   },
   {
@@ -17,7 +17,7 @@ const ALL_NEWS = [
     title: 'Drancy triomphe face à Toulouse dans un match épique',
     date: '18 AVRIL 2026',
     author: 'Equipe Communication',
-    image: '/images/5.png',
+    image: '/futsal-drancy/images/5.png',
     excerpt: 'Dans un match riche en émotions au Palais des Sports, nos joueurs ont su faire la différence en seconde période...'
   },
   {
@@ -26,7 +26,7 @@ const ALL_NEWS = [
     title: 'Ouverture des inscriptions pour l\'académie des jeunes',
     date: '15 AVRIL 2026',
     author: 'Direction Sportive',
-    image: '/images/6.png',
+    image: '/futsal-drancy/images/6.png',
     excerpt: 'Les inscriptions pour la saison 2025-2026 sont officiellement ouvertes pour toutes les catégories d\'âge...'
   },
   {
@@ -35,7 +35,7 @@ const ALL_NEWS = [
     title: 'Nouveau renfort brésilien pour l\'équipe première',
     date: '10 AVRIL 2026',
     author: 'Staff Technique',
-    image: '/images/7.png',
+    image: '/futsal-drancy/images/7.png',
     excerpt: 'Le club est fier d\'annoncer l\'arrivée de Junior Silva, ailier de talent en provenance de São Paulo...'
   },
   {
@@ -44,7 +44,7 @@ const ALL_NEWS = [
     title: 'Gala annuel du Futsal Drancy : Une soirée inoubliable',
     date: '05 AVRIL 2026',
     author: 'Equipe Communication',
-    image: '/images/8.png',
+    image: '/futsal-drancy/images/8.png',
     excerpt: 'Retour sur la soirée de gala qui a réuni joueurs, partenaires et supporters pour célébrer nos 20 ans...'
   }
 ];

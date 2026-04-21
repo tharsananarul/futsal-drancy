@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background Decor - Large Logo Watermark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] w-[150vw] md:w-[80vw] h-[150vw] md:h-[80vw] pointer-events-none">
         <img 
-          src="/logo/futsal logo.png" 
+          src="/futsal-drancy/logo/futsal logo.png" 
           alt="" 
           className="w-full h-full object-contain filter grayscale"
         />
