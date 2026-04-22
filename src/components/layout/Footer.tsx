@@ -154,16 +154,16 @@ export default function Footer() {
                 SAISON <span className="text-white/60">{CLUB_DATA.season}</span>
               </p>
             </div>
+
+            <div className="hidden xl:block">
+              <p className="text-[8px] text-white/20 font-black tracking-[0.5em] uppercase">Passion • Formation • Performance</p>
+            </div>
             
             <div className="flex flex-wrap justify-center gap-6 md:gap-10 text-white/20">
               <a href="#" className="hover:text-accent transition-colors border-b border-transparent hover:border-accent pb-1">Mentions Légales</a>
               <a href="#" className="hover:text-accent transition-colors border-b border-transparent hover:border-accent pb-1">Confidentialité</a>
               <a href="#" className="hover:text-accent transition-colors border-b border-transparent hover:border-accent pb-1">Credits</a>
             </div>
-          </div>
-          
-          <div className="mt-12 text-center">
-            <p className="text-[7px] text-white/20 font-black tracking-[1em] uppercase">Passion • Formation • Performance</p>
           </div>
         </div>
       </div>
