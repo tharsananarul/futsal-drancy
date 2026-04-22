@@ -212,13 +212,19 @@ export const CLUB_DATA = {
     }
   ],
 
-  // L'effectif
-  players: [
-    { name: 'Ricardo S.', role: 'Pivot / Capitaine', number: '10', image: getAssetPath('images/1.png') },
-    { name: 'Hamza B.', role: 'Fixe', number: '4', image: getAssetPath('images/2.png') },
-    { name: 'Lucas M.', role: 'Ailier', number: '7', image: getAssetPath('images/3.png') },
-    { name: 'Yannis K.', role: 'Gardien', number: '1', image: getAssetPath('images/4.png') },
-    { name: 'Enzo F.', role: 'Ailier', number: '11', image: getAssetPath('images/5.png') },
-    { name: 'Sofiane R.', role: 'Fixe', number: '5', image: getAssetPath('images/6.png') },
-  ]
+  // Les Équipes
+  teams: {
+    garcons: [
+      { name: 'U7 / U9', image: getAssetPath('images/1.png') },
+      { name: 'U11 / U13', image: getAssetPath('images/2.png') },
+      { name: 'U15 / U18', image: getAssetPath('images/3.png') },
+      { name: 'Séniors A', image: getAssetPath('images/4.png') },
+      { name: 'Séniors B', image: getAssetPath('images/5.png') },
+    ],
+    filles: [
+      { name: 'U10F / U13F', image: getAssetPath('images/6.png') },
+      { name: 'U15F / U18F', image: getAssetPath('images/7.png') },
+      { name: 'Séniors F', image: getAssetPath('images/8.png') },
+    ]
+  }
 };
