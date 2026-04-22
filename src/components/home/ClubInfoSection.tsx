@@ -67,9 +67,9 @@ export default function ClubInfoSection() {
           >
             <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl">
               <img 
-                src={getAssetPath('images/club-values.png')} 
+                src={getAssetPath('images/IMG-20250528-WA0017.jpg')} 
                 alt="Futsal Drancy - Valeurs et Engagement" 
-                className="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-navy-dark/20 mix-blend-overlay"></div>
             </div>
