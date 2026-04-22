@@ -125,7 +125,7 @@ export const CLUB_DATA = {
 
   // Coordonnées
   contact: {
-    address: "Gymnase Joliot Curie, 107 Rue de la République, 93700 Drancy",
+    address: "85 Rue Auguste Blanqui, 93700 Drancy",
     phone: "01 48 96 50 00",
     email: "contact@futsaldrancy.fr",
     socials: {
