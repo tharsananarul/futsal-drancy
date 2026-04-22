@@ -50,7 +50,7 @@ export default function ClubInfoSection() {
                       <Icon className="text-accent group-hover:text-navy-dark transition-colors" size={24} />
                     </div>
                     <div className="space-y-2">
-                      <h4 className="font-display font-black text-white text-xl uppercase italic">{value.title}</h4>
+                      <h4 className="font-display font-black text-white text-xl uppercase">{value.title}</h4>
                       <p className="text-gray-500 text-sm leading-relaxed max-w-xs">{value.description}</p>
                     </div>
                   </motion.div>
