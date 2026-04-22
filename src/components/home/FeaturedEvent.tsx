@@ -4,7 +4,7 @@ import { getAssetPath } from '../../utils/assets';
 
 export default function FeaturedEvent() {
   return (
-    <section className="bg-white py-24 md:py-32 relative overflow-hidden">
+    <section className="bg-navy-dark py-24 md:py-32 relative overflow-hidden border-t border-white/5">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Image / Poster */}
@@ -14,7 +14,7 @@ export default function FeaturedEvent() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-[3/4] md:aspect-auto md:h-[600px] overflow-hidden rounded-[2.5rem] shadow-2xl">
+            <div className="aspect-[3/4] md:aspect-auto md:h-[600px] overflow-hidden rounded-[2.5rem] shadow-2xl border border-white/10">
               <img 
                 src={getAssetPath('images/post can féminine.png')} 
                 alt="CAN Féminine Futsal" 
@@ -37,43 +37,43 @@ export default function FeaturedEvent() {
           >
             <div className="space-y-4">
               <span className="text-accent font-black tracking-[0.3em] uppercase text-xs">Événement Historique</span>
-              <h2 className="text-4xl md:text-7xl text-navy-dark font-display font-black uppercase tracking-tighter leading-[0.85]">
+              <h2 className="text-4xl md:text-7xl text-white font-display font-black uppercase tracking-tighter leading-[0.85]">
                 La 1ère édition de la <span className="text-accent">CAN Féminine</span>
               </h2>
             </div>
 
-            <p className="text-gray-600 text-lg md:text-xl font-medium leading-relaxed">
+            <p className="text-white/70 text-lg md:text-xl font-medium leading-relaxed">
               Une semaine de compétition, de passion et de mise en lumière du futsal au féminin ! 
               Le club a eu l'honneur d'organiser cet événement majeur, rassemblant des joueuses venues de tous horizons pour représenter leur pays avec fierté.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-              <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+              <div className="flex items-start space-x-4 p-6 bg-white/5 rounded-2xl border border-white/5">
                 <Calendar className="text-accent shrink-0" size={24} />
                 <div>
-                  <h4 className="text-navy-dark font-black uppercase text-xs mb-1">Dates</h4>
-                  <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">Du 25 au 31 Août 2025</p>
+                  <h4 className="text-white font-black uppercase text-xs mb-1">Dates</h4>
+                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest">Du 25 au 31 Août 2025</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+              <div className="flex items-start space-x-4 p-6 bg-white/5 rounded-2xl border border-white/5">
                 <MapPin className="text-accent shrink-0" size={24} />
                 <div>
-                  <h4 className="text-navy-dark font-black uppercase text-xs mb-1">Lieu</h4>
-                  <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">Gymnase Joliot Curie</p>
+                  <h4 className="text-white font-black uppercase text-xs mb-1">Lieu</h4>
+                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest">Gymnase Joliot Curie</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+              <div className="flex items-start space-x-4 p-6 bg-white/5 rounded-2xl border border-white/5">
                 <Users className="text-accent shrink-0" size={24} />
                 <div>
-                  <h4 className="text-navy-dark font-black uppercase text-xs mb-1">Format</h4>
-                  <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">5 joueuses par équipe</p>
+                  <h4 className="text-white font-black uppercase text-xs mb-1">Format</h4>
+                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest">5 joueuses par équipe</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+              <div className="flex items-start space-x-4 p-6 bg-white/5 rounded-2xl border border-white/5">
                 <Users className="text-accent shrink-0" size={24} />
                 <div>
-                  <h4 className="text-navy-dark font-black uppercase text-xs mb-1">Ambiance</h4>
-                  <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">18h à 22h30 chaque soir</p>
+                  <h4 className="text-white font-black uppercase text-xs mb-1">Ambiance</h4>
+                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest">18h à 22h30 chaque soir</p>
                 </div>
               </div>
             </div>
