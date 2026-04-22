@@ -16,7 +16,7 @@ export default function FeaturedEvent() {
           >
             <div className="aspect-[3/4] md:aspect-auto md:h-[600px] overflow-hidden rounded-[2.5rem] shadow-2xl">
               <img 
-                src={getAssetPath('images/can-feminine.jpg')} 
+                src={getAssetPath('images/post can féminine.png')} 
                 alt="CAN Féminine Futsal" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />

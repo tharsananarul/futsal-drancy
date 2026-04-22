@@ -142,7 +142,7 @@ export const CLUB_DATA = {
       title: '1ère Édition CAN Féminine Futsal',
       date: '31 Juillet 2025',
       category: 'Événement',
-      image: getAssetPath('images/can-feminine.jpg'),
+      image: getAssetPath('images/post can féminine.png'),
       excerpt: 'Une semaine de compétition, de passion et de mise en lumière du futsal au féminin ! Rejoignez-nous au Gymnase Joliot Curie.'
     },
     {
