@@ -11,8 +11,8 @@ export default function Hero() {
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src={getAssetPath('images/IMG-20250615-WA0019.jpg')} 
-          alt="Futsal Drancy Match" 
+          src={getAssetPath('images/IMG-20250528-WA0017.jpg')} 
+          alt="Futsal Drancy - École de Futsal" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
