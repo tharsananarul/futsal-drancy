@@ -23,8 +23,8 @@ export default function StatsOverview() {
               transition={{ delay: idx * 0.1 }}
               className={`text-center px-8 ${idx !== STATS.length - 1 ? 'lg:border-r border-white/10' : ''}`}
             >
-              <span className="block text-white font-display text-6xl md:text-8xl font-black mb-2 italic tracking-tighter">{stat.value}</span>
-              <span className="block text-accent text-[10px] md:text-xs font-black uppercase tracking-[0.4em] italic">{stat.label}</span>
+              <span className="block text-white font-display text-6xl md:text-8xl font-black mb-2 tracking-tighter">{stat.value}</span>
+              <span className="block text-accent text-[10px] md:text-xs font-black uppercase tracking-[0.4em]">{stat.label}</span>
             </motion.div>
           ))}
         </div>

@@ -13,7 +13,7 @@ export default function MatchTicker() {
       >
         {[...matches, ...matches].map((match, i) => (
           <div key={i} className="inline-flex items-center px-8 border-r border-white/5 group cursor-default">
-            <span className="text-[10px] font-bold text-accent mr-4 tracking-tighter italic uppercase">{match.date}</span>
+            <span className="text-[10px] font-bold text-accent mr-4 tracking-tighter uppercase">{match.date}</span>
             <div className="flex items-center space-x-3">
               <div className="flex items-center space-x-2">
                 {match.team1 === 'DRANCY' && (
@@ -25,9 +25,9 @@ export default function MatchTicker() {
               </div>
 
               <div className="bg-white/10 px-2 py-0.5 rounded-sm flex items-center space-x-1 border border-white/5">
-                <span className="font-display font-black text-xs text-accent italic">{match.score1}</span>
+                <span className="font-display font-black text-xs text-accent">{match.score1}</span>
                 {typeof match.score1 === 'number' && <span className="text-white/20">-</span>}
-                <span className="font-display font-black text-xs text-accent italic">{match.score2}</span>
+                <span className="font-display font-black text-xs text-accent">{match.score2}</span>
               </div>
 
               <div className="flex items-center space-x-2">

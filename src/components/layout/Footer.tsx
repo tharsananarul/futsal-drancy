@@ -18,7 +18,7 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <img src={getAssetPath('logo/futsal-logo.png')} className="w-12 h-12 object-contain" alt="Logo" />
-                <span className="font-display font-black text-2xl uppercase italic text-white leading-none">
+                <span className="font-display font-black text-2xl uppercase text-white leading-none">
                   {name.split(' ')[0]} <br />
                   <span className="text-accent">{name.split(' ')[1]}</span>
                 </span>
@@ -50,7 +50,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-8">
-            <h4 className="text-white font-display font-black uppercase italic tracking-widest text-sm border-l-4 border-accent pl-4">Navigation</h4>
+            <h4 className="text-white font-display font-black uppercase tracking-widest text-sm border-l-4 border-accent pl-4">Navigation</h4>
             <ul className="space-y-4">
               {[
                 { name: 'Accueil', path: '/' },
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-8">
-            <h4 className="text-white font-display font-black uppercase italic tracking-widest text-sm border-l-4 border-accent pl-4">Informations</h4>
+            <h4 className="text-white font-display font-black uppercase tracking-widest text-sm border-l-4 border-accent pl-4">Informations</h4>
             <div className="space-y-6">
               <div className="flex items-start space-x-4 group">
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-accent/10 transition-colors">
@@ -117,7 +117,7 @@ export default function Footer() {
 
           {/* CTA / Newsletter */}
           <div className="space-y-8">
-            <h4 className="text-white font-display font-black uppercase italic tracking-widest text-sm border-l-4 border-accent pl-4">Rejoindre</h4>
+            <h4 className="text-white font-display font-black uppercase tracking-widest text-sm border-l-4 border-accent pl-4">Rejoindre</h4>
             <div className="space-y-6">
               <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest leading-relaxed">
                 Soyez les premiers informés des résultats et des événements du club.

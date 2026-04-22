@@ -46,9 +46,9 @@ export default function UpcomingMatchesSection() {
                 </div>
 
                 <div className="flex items-center gap-4 md:gap-8">
-                  <div className="text-xl md:text-2xl text-white font-black uppercase italic">DRANCY</div>
+                  <div className="text-xl md:text-2xl text-white font-black uppercase">DRANCY</div>
                   <div className="bg-accent/20 text-accent px-3 py-1 rounded text-[10px] font-black">VS</div>
-                  <div className="text-xl md:text-2xl text-white/60 font-black uppercase italic">{match.opponent}</div>
+                  <div className="text-xl md:text-2xl text-white/60 font-black uppercase">{match.opponent}</div>
                 </div>
               </div>
 

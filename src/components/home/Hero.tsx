@@ -29,7 +29,7 @@ export default function Hero() {
         >
           <div className="inline-flex items-center space-x-3 mb-6">
             <div className="w-8 h-[1px] bg-accent"></div>
-            <span className="text-accent font-black tracking-[0.4em] uppercase text-[10px] italic">
+            <span className="text-accent font-black tracking-[0.4em] uppercase text-[10px]">
               Saison {season}
             </span>
             <div className="w-8 h-[1px] bg-accent"></div>
@@ -41,7 +41,7 @@ export default function Hero() {
           </h1>
           
           <div className="max-w-2xl mx-auto space-y-6">
-            <p className="text-xl md:text-2xl text-white/90 font-black italic uppercase tracking-widest border-y border-white/10 py-4">
+            <p className="text-xl md:text-2xl text-white/90 font-black uppercase tracking-widest border-y border-white/10 py-4">
               {motto}
             </p>
             <p className="text-gray-400 text-sm md:text-base leading-relaxed font-medium max-w-lg mx-auto">

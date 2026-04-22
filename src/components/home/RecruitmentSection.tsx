@@ -7,7 +7,7 @@ export default function RecruitmentSection() {
     <section className="bg-accent py-24 md:py-32 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-navy-dark/5 font-display font-black text-[40vw] leading-none select-none uppercase italic whitespace-nowrap">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-navy-dark/5 font-display font-black text-[40vw] leading-none select-none uppercase whitespace-nowrap">
           JOIN US
         </div>
       </div>
@@ -25,7 +25,7 @@ export default function RecruitmentSection() {
               <span className="text-[10px] font-black uppercase tracking-widest">Inscriptions 2025-2026</span>
             </div>
             
-            <h2 className="text-6xl md:text-8xl lg:text-9xl text-navy-dark font-display italic font-black uppercase tracking-tighter leading-[0.8]">
+            <h2 className="text-6xl md:text-8xl lg:text-9xl text-navy-dark font-display font-black uppercase tracking-tighter leading-[0.8]">
               Deviens un <br /> <span className="text-white drop-shadow-2xl">Joueur du Club</span>
             </h2>
             
@@ -65,7 +65,7 @@ export default function RecruitmentSection() {
               { label: "Séniors", sub: "Élite & Loisir" }
             ].map((cat, i) => (
               <div key={i} className="text-center">
-                <p className="text-navy-dark font-black text-xl italic uppercase leading-none">{cat.label}</p>
+                <p className="text-navy-dark font-black text-xl uppercase leading-none">{cat.label}</p>
                 <p className="text-navy-dark/50 text-[9px] font-bold uppercase tracking-widest mt-1">{cat.sub}</p>
               </div>
             ))}

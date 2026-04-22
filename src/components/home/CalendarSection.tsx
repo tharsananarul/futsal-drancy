@@ -37,7 +37,7 @@ export default function CalendarSection() {
               className="space-y-6"
             >
               <div className="bg-white/5 border border-white/10 text-white p-4 flex items-center justify-between">
-                <span className="font-black uppercase italic tracking-widest">{cat.category}</span>
+                <span className="font-black uppercase tracking-widest">{cat.category}</span>
                 <span className="text-[10px] text-accent font-black uppercase">{cat.matches.length} Matchs</span>
               </div>
 
@@ -49,7 +49,7 @@ export default function CalendarSection() {
                         <span className="text-[10px] font-black text-white/40 uppercase">{match.date} • {match.time}</span>
                         <span className="text-[8px] bg-white/10 px-2 py-0.5 rounded text-white/60 font-bold uppercase">{match.type}</span>
                       </div>
-                      <p className="text-sm font-black uppercase italic text-white group-hover:text-accent transition-colors">VS {match.opponent}</p>
+                      <p className="text-sm font-black uppercase text-white group-hover:text-accent transition-colors">VS {match.opponent}</p>
                     </div>
                     <span className="text-[9px] font-black uppercase tracking-tighter text-white/30">{match.location}</span>
                   </div>

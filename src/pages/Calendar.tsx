@@ -16,7 +16,7 @@ export default function CalendarPage() {
         >
           <div className="flex items-center justify-center space-x-4 mb-4">
             <div className="w-12 h-[1px] bg-accent/30"></div>
-            <span className="text-accent font-black tracking-[0.4em] uppercase text-[10px] italic">Compétition {CLUB_DATA.season}</span>
+            <span className="text-accent font-black tracking-[0.4em] uppercase text-[10px]">Compétition {CLUB_DATA.season}</span>
             <div className="w-12 h-[1px] bg-accent/30"></div>
           </div>
           <h1 className="text-4xl md:text-7xl lg:text-9xl text-white leading-[0.8] font-display font-black uppercase tracking-tighter">

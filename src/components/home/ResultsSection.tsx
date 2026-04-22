@@ -47,9 +47,9 @@ export default function ResultsSection() {
                 <div className="flex justify-between items-center">
                   <div className="space-y-1">
                     <p className="text-[10px] text-accent font-black uppercase tracking-tighter">{result.team}</p>
-                    <p className="text-lg text-white font-black uppercase italic leading-none">DRANCY</p>
+                    <p className="text-lg text-white font-black uppercase leading-none">DRANCY</p>
                   </div>
-                  <div className="text-2xl font-display font-black text-white italic">{result.score.split(' - ')[0]}</div>
+                  <div className="text-2xl font-display font-black text-white">{result.score.split(' - ')[0]}</div>
                 </div>
 
                 <div className="h-px bg-white/5 w-full"></div>
@@ -57,9 +57,9 @@ export default function ResultsSection() {
                 <div className="flex justify-between items-center">
                   <div className="space-y-1">
                     <p className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">Adversaire</p>
-                    <p className="text-lg text-white/60 font-black uppercase italic leading-none">{result.opponent}</p>
+                    <p className="text-lg text-white/60 font-black uppercase leading-none">{result.opponent}</p>
                   </div>
-                  <div className="text-2xl font-display font-black text-white/40 italic">{result.score.split(' - ')[1]}</div>
+                  <div className="text-2xl font-display font-black text-white/40">{result.score.split(' - ')[1]}</div>
                 </div>
               </div>
 
