@@ -131,8 +131,8 @@ export const CLUB_DATA = {
     socials: {
       instagram: "https://instagram.com/futsaldrancy",
       facebook: "https://facebook.com/futsaldrancy",
-      twitter: "https://twitter.com/futsaldrancy",
-      tiktok: "https://tiktok.com/@futsaldrancy"
+      tiktok: "https://tiktok.com/@futsaldrancy",
+      youtube: "https://youtube.com/@futsaldrancy"
     }
   },
 

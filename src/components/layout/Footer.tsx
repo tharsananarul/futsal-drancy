@@ -32,15 +32,15 @@ export default function Footer() {
               {[
                 { icon: Instagram, url: contact.socials.instagram },
                 { icon: Facebook, url: contact.socials.facebook },
-                { icon: Twitter, url: contact.socials.twitter },
-                { icon: Youtube, url: "#" }
+                { icon: Youtube, url: contact.socials.youtube },
+                { icon: Mail, url: `mailto:${contact.email}` }
               ].map((social, i) => (
                 <a 
                   key={i}
                   href={social.url} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-accent hover:border-accent transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-accent/20 flex items-center justify-center text-accent hover:bg-accent hover:text-navy-dark transition-all duration-300"
                 >
                   <social.icon size={18} />
                 </a>
