@@ -127,7 +127,7 @@ export const CLUB_DATA = {
   contact: {
     address: "85 Rue Auguste Blanqui, 93700 Drancy",
     phone: "01 48 96 50 00",
-    email: "contact@futsaldrancy.fr",
+    email: "550738@lpiff.fr",
     socials: {
       instagram: "https://instagram.com/futsaldrancy",
       facebook: "https://facebook.com/futsaldrancy",

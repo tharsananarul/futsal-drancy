@@ -82,7 +82,7 @@ export default function Footer() {
                   <MapPin size={16} className="text-accent" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-white text-[10px] font-black uppercase tracking-widest mb-1">Gymnase</span>
+                  <span className="text-white text-[10px] font-black uppercase tracking-widest mb-1">Club</span>
                   <span className="text-gray-500 text-[10px] font-bold uppercase tracking-widest leading-relaxed">
                     {contact.address}
                   </span>
