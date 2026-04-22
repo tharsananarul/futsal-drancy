@@ -138,6 +138,14 @@ export const CLUB_DATA = {
   // Les actualités
   news: [
     {
+      id: 0,
+      title: '1ère Édition CAN Féminine Futsal',
+      date: '31 Juillet 2025',
+      category: 'Événement',
+      image: getAssetPath('images/can-feminine.jpg'),
+      excerpt: 'Une semaine de compétition, de passion et de mise en lumière du futsal au féminin ! Rejoignez-nous au Gymnase Joliot Curie.'
+    },
+    {
       id: 1,
       category: 'Club',
       title: 'Le Futsal Drancy recherche des Bénévoles et des Coachs',

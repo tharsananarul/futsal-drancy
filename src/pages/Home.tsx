@@ -3,6 +3,7 @@ import ResultsSection from '../components/home/ResultsSection';
 import UpcomingMatchesSection from '../components/home/UpcomingMatchesSection';
 import CalendarSection from '../components/home/CalendarSection';
 import LatestNews from '../components/home/LatestNews';
+import FeaturedEvent from '../components/home/FeaturedEvent';
 import RecruitmentSection from '../components/home/RecruitmentSection';
 import ClubInfoSection from '../components/home/ClubInfoSection';
 import PartnersSection from '../components/home/PartnersSection';
@@ -25,6 +26,9 @@ export default function Home() {
       
       {/* 5. ACTUALITÉS */}
       <LatestNews />
+
+      {/* 5.5 ÉVÉNEMENT MARQUANT */}
+      <FeaturedEvent />
       
       {/* 6. RECRUTEMENT */}
       <RecruitmentSection />
