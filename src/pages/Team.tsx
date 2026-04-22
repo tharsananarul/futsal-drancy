@@ -1,61 +1,94 @@
-import { motion } from 'motion/react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { CLUB_DATA } from '../data/clubData';
+import { Users, UserCircle } from 'lucide-react';
 
 export default function Team() {
-  const players = CLUB_DATA.players;
-  const season = CLUB_DATA.season;
-  
+  const { season, teams } = CLUB_DATA;
+  const [activeSection, setActiveSection] = useState<'garcons' | 'filles'>('garcons');
+
   return (
     <div className="pt-32 pb-24 bg-navy-dark min-h-screen">
       <div className="section-container">
-        <div className="text-center space-y-4 mb-20">
+        <div className="text-center space-y-4 mb-16">
           <span className="text-accent font-black tracking-[0.3em] uppercase text-xs">Saison {season}</span>
           <h1 className="text-4xl md:text-8xl text-white font-display font-black uppercase tracking-tighter">LES <br/> ÉQUIPES</h1>
         </div>
 
-        {/* Teams Sections */}
-        <div className="space-y-32">
-          {Object.entries(CLUB_DATA.teams).map(([category, teams], catIdx) => (
-            <div key={category} className="space-y-12">
-              <div className="flex items-center space-x-6">
-                <h2 className="text-3xl md:text-6xl text-white font-display font-black uppercase tracking-tighter">
-                  SECTION <span className="text-accent">{category === 'garcons' ? 'MASCULINE' : 'FÉMININE'}</span>
-                </h2>
-                <div className="flex-1 h-px bg-white/10"></div>
+        {/* Section Selector */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20 max-w-4xl mx-auto">
+          {[
+            { id: 'garcons', label: 'Section Masculine', icon: Users, image: CLUB_DATA.teams.garcons[0].image },
+            { id: 'filles', label: 'Section Féminine', icon: UserCircle, image: CLUB_DATA.teams.filles[0].image }
+          ].map((section) => (
+            <button
+              key={section.id}
+              onClick={() => setActiveSection(section.id as 'garcons' | 'filles')}
+              className={`relative overflow-hidden rounded-3xl aspect-[16/7] md:aspect-[16/5] group transition-all duration-500 ${
+                activeSection === section.id ? 'ring-2 ring-accent scale-[1.02]' : 'opacity-40 grayscale hover:opacity-100 hover:grayscale-0'
+              }`}
+            >
+              <img src={section.image} alt={section.label} className="w-full h-full object-cover" />
+              <div className={`absolute inset-0 transition-colors duration-500 ${
+                activeSection === section.id ? 'bg-navy-dark/40' : 'bg-navy-dark/80 group-hover:bg-navy-dark/40'
+              }`}></div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4">
+                <section.icon size={48} className={activeSection === section.id ? 'text-accent' : 'text-white'} />
+                <span className="text-xl md:text-3xl text-white font-display font-black uppercase tracking-tighter">{section.label}</span>
+                {activeSection === section.id && (
+                  <motion.div layoutId="activeUnderline" className="h-1 w-12 bg-accent rounded-full" />
+                )}
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {teams.map((team, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="group relative overflow-hidden rounded-[2rem] bg-white/5"
-                  >
-                    <div className="aspect-[16/10] overflow-hidden">
-                      <img 
-                        src={team.image} 
-                        alt={team.name}
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
-                      />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/20 to-transparent opacity-90"></div>
-                    
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <p className="text-accent font-black text-[10px] uppercase tracking-[0.4em] mb-2">Futsal Drancy</p>
-                      <h3 className="text-3xl text-white font-display font-black uppercase tracking-tight">{team.name}</h3>
-                    </div>
-
-                    {/* Decorative Border */}
-                    <div className="absolute inset-4 border border-white/0 group-hover:border-accent/20 transition-all duration-700 pointer-events-none rounded-[1.5rem]"></div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+            </button>
           ))}
         </div>
+
+        {/* Teams Grid */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeSection}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+          >
+            <div className="flex items-center space-x-6 mb-12">
+              <h2 className="text-2xl md:text-4xl text-white font-display font-black uppercase tracking-tighter">
+                EFFECTIF <span className="text-accent">{activeSection === 'garcons' ? 'MASCULIN' : 'FÉMININ'}</span>
+              </h2>
+              <div className="flex-1 h-px bg-white/10"></div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {teams[activeSection].map((team, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="group relative overflow-hidden rounded-[2rem] bg-white/5"
+                >
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img 
+                      src={team.image} 
+                      alt={team.name}
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/20 to-transparent opacity-90"></div>
+                  
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <p className="text-accent font-black text-[10px] uppercase tracking-[0.4em] mb-2">Futsal Drancy</p>
+                    <h3 className="text-2xl md:text-3xl text-white font-display font-black uppercase tracking-tight">{team.name}</h3>
+                  </div>
+                  <div className="absolute inset-4 border border-white/0 group-hover:border-accent/20 transition-all duration-700 pointer-events-none rounded-[1.5rem]"></div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
         {/* Categories Table Section */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}

@@ -215,16 +215,19 @@ export const CLUB_DATA = {
   // Les Équipes
   teams: {
     garcons: [
-      { name: 'U7 / U9', image: getAssetPath('images/1.png') },
-      { name: 'U11 / U13', image: getAssetPath('images/2.png') },
-      { name: 'U15 / U18', image: getAssetPath('images/3.png') },
-      { name: 'Séniors A', image: getAssetPath('images/4.png') },
-      { name: 'Séniors B', image: getAssetPath('images/5.png') },
+      { name: 'U6 / U7', image: getAssetPath('images/1.png') },
+      { name: 'U8 / U9', image: getAssetPath('images/2.png') },
+      { name: 'U10 / U11', image: getAssetPath('images/3.png') },
+      { name: 'U12 / U13', image: getAssetPath('images/4.png') },
+      { name: 'U14 / U15', image: getAssetPath('images/5.png') },
+      { name: 'U16 / U18', image: getAssetPath('images/6.png') },
+      { name: 'Séniors', image: getAssetPath('images/7.png') },
     ],
     filles: [
-      { name: 'U10F / U13F', image: getAssetPath('images/6.png') },
-      { name: 'U15F / U18F', image: getAssetPath('images/7.png') },
-      { name: 'Séniors F', image: getAssetPath('images/8.png') },
+      { name: 'U6F / U9F', image: getAssetPath('images/8.png') },
+      { name: 'U10F / U13F', image: getAssetPath('images/9.png') },
+      { name: 'U15F / U18F', image: getAssetPath('images/10.png') },
+      { name: 'Séniors F', image: getAssetPath('images/1.png') },
     ]
   }
 };
