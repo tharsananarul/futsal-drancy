@@ -21,12 +21,12 @@ export default function PartnersSection() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 ${partner.isMain ? 'scale-110 opacity-100' : 'scale-90 opacity-70'}`}
+                className={`flex items-center justify-center transition-all duration-500 ${partner.isMain ? 'scale-110' : 'scale-90'}`}
               >
                 <img 
                   src={partner.logo} 
                   alt={partner.name} 
-                  className="h-12 md:h-16 w-auto object-contain filter brightness-0 invert opacity-40 hover:opacity-100 transition-opacity"
+                  className="h-12 md:h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
                 />
               </motion.div>
             ))}
