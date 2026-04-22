@@ -12,10 +12,10 @@ export default function Contact() {
         >
           <div className="flex items-center justify-center space-x-4 mb-4">
             <div className="w-12 h-[1px] bg-accent/30"></div>
-            <span className="text-accent font-black tracking-[0.4em] uppercase text-[10px] italic">Get in touch</span>
+            <span className="text-accent font-black tracking-[0.4em] uppercase text-[10px]">Get in touch</span>
             <div className="w-12 h-[1px] bg-accent/30"></div>
           </div>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl text-white leading-[0.8] italic font-black uppercase tracking-tighter">
+          <h1 className="text-4xl md:text-8xl lg:text-9xl text-white leading-[0.8] font-display font-black uppercase tracking-tighter">
             CONTACTEZ <br/> <span className="text-accent">LA MEUTE.</span>
           </h1>
         </motion.div>
@@ -24,8 +24,8 @@ export default function Contact() {
           {/* Info Side */}
           <div className="space-y-12">
             <div className="space-y-4">
-              <h2 className="text-4xl text-white">Prêt à nous rejoindre ou poser une question ?</h2>
-              <p className="text-white/60 text-lg leading-relaxed font-medium uppercase tracking-widest italic">
+              <h2 className="text-3xl md:text-4xl text-white font-black uppercase">Prêt à nous rejoindre ou poser une question ?</h2>
+              <p className="text-white/60 text-lg leading-relaxed font-medium uppercase tracking-widest">
                 Notre équipe administrative vous répond sous 24h à 48h.
               </p>
             </div>
@@ -36,7 +36,7 @@ export default function Contact() {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <h4 className="text-white font-display font-black uppercase italic">Siège Social</h4>
+                  <h4 className="text-white font-display font-black uppercase">Siège Social</h4>
                   <p className="text-white/40 text-sm uppercase tracking-widest">85 Rue Auguste Blanqui, 93700 Drancy</p>
                 </div>
               </div>
@@ -46,7 +46,7 @@ export default function Contact() {
                   <Phone size={24} />
                 </div>
                 <div>
-                  <h4 className="text-white font-display font-black uppercase italic">Téléphone</h4>
+                  <h4 className="text-white font-display font-black uppercase">Téléphone</h4>
                   <p className="text-white/40 text-sm uppercase tracking-widest">01 48 35 94 45</p>
                 </div>
               </div>
@@ -56,7 +56,7 @@ export default function Contact() {
                   <Mail size={24} />
                 </div>
                 <div>
-                  <h4 className="text-white font-display font-black uppercase italic">E-mail</h4>
+                  <h4 className="text-white font-display font-black uppercase">E-mail</h4>
                   <p className="text-white/40 text-sm uppercase tracking-widest">550738@lpiff.fr</p>
                 </div>
               </div>

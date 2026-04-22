@@ -6,7 +6,7 @@ export default function MatchTicker() {
   const matches = CLUB_DATA.matches;
   return (
     <div className="bg-navy-dark overflow-hidden whitespace-nowrap py-3 relative border-b border-white/5">
-      <motion.div 
+      <motion.div
         animate={{ x: [0, -1000] }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
         className="inline-block"
@@ -23,7 +23,7 @@ export default function MatchTicker() {
                   {match.team1}
                 </span>
               </div>
-              
+
               <div className="bg-white/10 px-2 py-0.5 rounded-sm flex items-center space-x-1 border border-white/5">
                 <span className="font-display font-black text-xs text-accent italic">{match.score1}</span>
                 {typeof match.score1 === 'number' && <span className="text-white/20">-</span>}

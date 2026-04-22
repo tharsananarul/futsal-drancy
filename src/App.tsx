@@ -8,10 +8,12 @@ import Boutique from './pages/Boutique';
 import Contact from './pages/Contact';
 import NewsPage from './pages/News';
 import { motion, AnimatePresence } from 'motion/react';
+import ScrollToTop from './components/utils/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
         <AnimatePresence mode="wait">
           <Routes>

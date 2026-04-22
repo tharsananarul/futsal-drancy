@@ -6,11 +6,11 @@ export default function Team() {
   const season = CLUB_DATA.season;
   
   return (
-    <div className="pt-32 pb-24 bg-primary min-h-screen">
+    <div className="pt-32 pb-24 bg-navy-dark min-h-screen">
       <div className="section-container">
         <div className="text-center space-y-4 mb-20">
-          <span className="text-accent font-black tracking-[0.3em] uppercase text-xs italic">Effectif {season}</span>
-          <h1 className="text-5xl md:text-8xl text-white">L'Équipe <br/> Première</h1>
+          <span className="text-accent font-black tracking-[0.3em] uppercase text-xs">Effectif {season}</span>
+          <h1 className="text-4xl md:text-8xl text-white font-display font-black uppercase tracking-tighter">L'Équipe <br/> Première</h1>
         </div>
 
         <motion.div 
@@ -43,7 +43,7 @@ export default function Team() {
               
               {/* Card Border Decor */}
               <div className="absolute inset-4 border border-white/0 group-hover:border-accent/30 transition-all duration-700 pointer-events-none"></div>
-
+ 
               <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
                 <div className="flex justify-between items-end">
                    <div className="space-y-1">
@@ -52,11 +52,11 @@ export default function Team() {
                     >
                       {player.role}
                     </motion.span>
-                    <h3 className="text-white text-4xl lg:text-5xl font-display leading-[0.8] font-black italic uppercase tracking-tighter">
+                    <h3 className="text-white text-4xl lg:text-5xl font-display leading-[0.8] font-black uppercase tracking-tighter">
                       {player.name}
                     </h3>
                   </div>
-                  <span className="text-white/10 font-display text-8xl font-black italic group-hover:text-accent group-hover:opacity-100 transition-all duration-700 leading-none">
+                  <span className="text-white/10 font-display text-8xl font-black group-hover:text-accent group-hover:opacity-100 transition-all duration-700 leading-none">
                     {player.number}
                   </span>
                 </div>

@@ -18,12 +18,12 @@ export default function Boutique() {
             <span className="text-accent font-black tracking-[0.4em] uppercase text-[10px] italic">Official Store</span>
             <div className="w-12 h-[1px] bg-accent/30"></div>
           </div>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl text-white leading-[0.8] italic font-black uppercase tracking-tighter">
+          <h1 className="text-4xl md:text-7xl lg:text-9xl text-white leading-[0.8] font-display font-black uppercase tracking-tighter">
             PORTEZ NOS <br/> <span className="text-accent">COULEURS.</span>
           </h1>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {products.map((product, idx) => (
             <motion.div
               key={product.id}
@@ -32,30 +32,30 @@ export default function Boutique() {
               transition={{ delay: idx * 0.1 }}
               className="group"
             >
-              <div className="relative aspect-[3/4] overflow-hidden rounded-3xl mb-6 bg-white/5">
+              <div className="relative aspect-square overflow-hidden rounded-2xl mb-4 bg-white/5">
                 <img 
                   src={product.image} 
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
                 />
                 {product.badge && (
-                  <div className="absolute top-4 left-4 bg-accent text-navy-dark px-3 py-1 text-[10px] font-black uppercase tracking-widest rounded-full">
+                  <div className="absolute top-2 left-2 bg-accent text-navy-dark px-2 py-0.5 text-[8px] font-black uppercase tracking-widest rounded-full">
                     {product.badge}
                   </div>
                 )}
-                <div className="absolute inset-x-4 bottom-4 translate-y-12 group-hover:translate-y-0 transition-transform duration-300">
-                  <button className="w-full bg-white text-navy-dark font-black py-4 uppercase text-[10px] tracking-widest shadow-2xl">
-                    Ajouter au panier
+                <div className="absolute inset-x-2 bottom-2 translate-y-12 group-hover:translate-y-0 transition-transform duration-300 hidden md:block">
+                  <button className="w-full bg-white text-navy-dark font-black py-3 uppercase text-[9px] tracking-widest shadow-2xl">
+                    Ajouter
                   </button>
                 </div>
               </div>
               
-              <div className="space-y-2">
-                <div className="flex justify-between items-start">
-                  <span className="text-accent font-black text-[10px] uppercase tracking-widest">{product.category}</span>
-                  <span className="text-white font-display font-black italic">{product.price}</span>
+              <div className="space-y-1 px-1">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
+                  <span className="text-accent font-black text-[8px] uppercase tracking-widest">{product.category}</span>
+                  <span className="text-white font-display font-black text-xs md:text-base">{product.price}</span>
                 </div>
-                <h3 className="text-lg text-white font-display font-black uppercase italic leading-tight">{product.name}</h3>
+                <h3 className="text-[10px] md:text-lg text-white font-display font-black uppercase leading-tight truncate">{product.name}</h3>
               </div>
             </motion.div>
           ))}

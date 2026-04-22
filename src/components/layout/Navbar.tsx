@@ -47,7 +47,7 @@ export default function Navbar() {
             <img 
               src={getAssetPath('logo/futsal-logo.png')} 
               alt="Futsal Drancy Logo" 
-              className="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(245,185,9,0.3)]"
+              className="w-full h-full object-contain"
             />
           </motion.div>
           <div className="flex flex-col">
@@ -129,7 +129,7 @@ export default function Navbar() {
               </div>
               
               <div className="pt-8 border-t border-white/5">
-                <p className="text-white/20 text-[7px] font-bold uppercase tracking-[0.4em]">Un état d'esprit, une attitude</p>
+                <p className="text-white/60 text-[9px] font-black uppercase tracking-[0.3em]">Un état d'esprit, une attitude</p>
               </div>
             </motion.div>
           </>

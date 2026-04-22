@@ -1,23 +1,14 @@
 import { motion } from 'motion/react';
-import { Calendar as CalendarIcon, MapPin, Trophy, Clock } from 'lucide-react';
-
-const UPCOMING_MATCHES = [
-  { date: '26 AVRIL', time: '18:00', opponent: 'STRASBOURG', venue: 'Palais des Sports, Drancy', competition: 'Division 1' },
-  { date: '03 MAI', time: '20:30', opponent: 'NANTES', venue: 'Gymnase Mangin, Nantes', competition: 'Division 1' },
-  { date: '10 MAI', time: '18:00', opponent: 'MARSEILLE', venue: 'Palais des Sports, Drancy', competition: 'Division 1' },
-  { date: '17 MAI', time: '19:00', opponent: 'PARIS AC', venue: 'Stade Charléty, Paris', competition: 'Coupe de France' },
-];
-
-const PAST_RESULTS = [
-  { date: '18 AVRIL', opponent: 'TOULOUSE', score: '3 - 1', result: 'W', competition: 'Division 1' },
-  { date: '11 AVRIL', opponent: 'LILLE', score: '4 - 4', result: 'D', competition: 'Division 1' },
-  { date: '04 AVRIL', opponent: 'LYON', score: '5 - 2', result: 'W', competition: 'Division 1' },
-];
+import { Calendar as CalendarIcon, MapPin, Trophy, Clock, Filter, ChevronRight } from 'lucide-react';
+import { CLUB_DATA } from '../data/clubData';
 
 export default function CalendarPage() {
+  const { calendar, recentResults } = CLUB_DATA;
+
   return (
     <div className="pt-32 pb-24 bg-navy-dark min-h-screen">
       <div className="section-container">
+        {/* Header */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -25,100 +16,102 @@ export default function CalendarPage() {
         >
           <div className="flex items-center justify-center space-x-4 mb-4">
             <div className="w-12 h-[1px] bg-accent/30"></div>
-            <span className="text-accent font-black tracking-[0.4em] uppercase text-[10px] italic">Compétition 25/26</span>
+            <span className="text-accent font-black tracking-[0.4em] uppercase text-[10px] italic">Compétition {CLUB_DATA.season}</span>
             <div className="w-12 h-[1px] bg-accent/30"></div>
           </div>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl text-white leading-[0.8] italic font-black uppercase tracking-tighter">
-            CALENDRIER & <br/> <span className="text-accent">RÉSULTATS.</span>
+          <h1 className="text-4xl md:text-7xl lg:text-9xl text-white leading-[0.8] font-display font-black uppercase tracking-tighter">
+            AGENDA DU <br/> <span className="text-accent">CLUB.</span>
           </h1>
+          <p className="text-gray-400 text-xs md:text-sm max-w-lg mx-auto uppercase tracking-[0.2em] font-bold">
+            Consultez les dates, lieux et résultats de toutes nos catégories en temps réel.
+          </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
-          {/* Upcoming Matches */}
-          <div className="lg:col-span-2 space-y-8">
-            <h2 className="text-3xl text-white flex items-center space-x-4">
-              <CalendarIcon className="text-accent" />
-              <span>Prochaines Rencontres</span>
-            </h2>
-            
-            <div className="space-y-4">
-              {UPCOMING_MATCHES.map((match, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="glass-card p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 group hover:border-accent/30 transition-all"
-                >
-                  <div className="flex items-center space-x-8">
-                    <div className="text-center min-w-[80px]">
-                      <span className="block text-2xl font-display font-black text-white italic leading-none">{match.date.split(' ')[0]}</span>
-                      <span className="block text-[10px] font-black text-accent uppercase tracking-widest">{match.date.split(' ')[1]}</span>
-                    </div>
-                    <div className="h-12 w-[1px] bg-white/10 hidden md:block"></div>
-                    <div>
-                      <div className="flex items-center space-x-2 text-[10px] font-black text-white/40 uppercase tracking-widest mb-1">
-                        <Trophy size={10} />
-                        <span>{match.competition}</span>
-                      </div>
-                      <h3 className="text-2xl text-white font-display font-black uppercase italic">VS {match.opponent}</h3>
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-col md:items-end gap-2">
-                    <div className="flex items-center space-x-2 text-white/60 text-xs font-bold uppercase tracking-widest">
-                      <Clock size={14} className="text-accent" />
-                      <span>{match.time}</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-white/40 text-[10px] font-bold uppercase tracking-widest">
-                      <MapPin size={14} />
-                      <span>{match.venue}</span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+        {/* Results Bar (Quick Glance) */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+          {recentResults.slice(0, 4).map((res, i) => (
+            <div key={i} className="bg-white/5 border border-white/5 p-4 rounded-xl flex flex-col items-center">
+              <span className="text-[8px] text-accent font-black uppercase tracking-widest mb-2">{res.team}</span>
+              <div className="text-white font-display font-black text-lg uppercase leading-none">{res.opponent}</div>
+              <div className="text-accent font-black text-xl my-1">{res.score}</div>
+              <span className={`text-[8px] font-black uppercase tracking-widest ${res.status === 'Victoire' ? 'text-green-500' : 'text-yellow-500'}`}>{res.status}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Calendar by Categories */}
+        <div className="space-y-16">
+          <div className="flex items-center justify-between border-b border-white/10 pb-6">
+            <h2 className="text-3xl text-white font-display font-black uppercase">Calendrier par <span className="text-accent">Catégories</span></h2>
+            <div className="flex items-center space-x-4">
+              <button className="flex items-center space-x-2 bg-white/5 px-4 py-2 text-[10px] font-black uppercase tracking-widest text-white hover:bg-accent hover:text-navy-dark transition-all">
+                <Filter size={14} />
+                <span>Filtrer</span>
+              </button>
             </div>
           </div>
 
-          {/* Past Results */}
-          <div className="space-y-8">
-            <h2 className="text-3xl text-white flex items-center space-x-4">
-              <Trophy className="text-accent" />
-              <span>Derniers Scores</span>
-            </h2>
-            
-            <div className="space-y-4">
-              {PAST_RESULTS.map((result, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="glass-card p-6 rounded-2xl relative overflow-hidden"
-                >
-                  <div className={`absolute top-0 right-0 w-1 h-full ${
-                    result.result === 'W' ? 'bg-green-500' : 'bg-yellow-500'
-                  }`}></div>
-                  <div className="flex justify-between items-center">
-                    <div className="space-y-1">
-                      <span className="text-[10px] font-black text-white/40 uppercase tracking-widest">{result.date}</span>
-                      <h4 className="text-lg text-white font-display font-black uppercase italic">{result.opponent}</h4>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-display font-black text-accent italic">{result.score}</div>
-                      <span className={`text-[10px] font-black uppercase tracking-widest ${
-                        result.result === 'W' ? 'text-green-500' : 'text-yellow-500'
-                      }`}>
-                        {result.result === 'W' ? 'Victoire' : 'Nul'}
-                      </span>
-                    </div>
+          <div className="grid gap-12">
+            {calendar.map((cat, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="space-y-6"
+              >
+                <div className="flex items-center space-x-6">
+                  <div className="bg-accent text-navy-dark px-6 py-2 font-black uppercase tracking-widest skew-x-[-12deg]">
+                    <span className="inline-block skew-x-[12deg]">{cat.category}</span>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                  <div className="flex-1 h-px bg-white/5"></div>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {cat.matches.map((match, mIdx) => (
+                    <div 
+                      key={mIdx}
+                      className="glass-card p-6 border border-white/5 hover:border-accent/30 transition-all group relative overflow-hidden"
+                    >
+                      <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <CalendarIcon size={64} className="text-white" />
+                      </div>
+                      
+                      <div className="flex flex-col space-y-6 relative z-10">
+                        <div className="flex justify-between items-start">
+                          <div className="flex flex-col">
+                            <span className="text-accent font-black text-xs uppercase tracking-tighter">{match.date}</span>
+                            <span className="text-white/40 text-[10px] font-bold uppercase">{match.time}</span>
+                          </div>
+                          <span className="bg-white/10 px-2 py-1 rounded text-[8px] font-black text-white uppercase tracking-widest">{match.type}</span>
+                        </div>
+
+                        <div className="flex items-center space-x-4">
+                          <div className="text-xl font-display font-black text-white uppercase">DRANCY</div>
+                          <div className="text-accent/30 font-black">VS</div>
+                          <div className="text-xl font-display font-black text-white/40 uppercase">{match.opponent}</div>
+                        </div>
+
+                        <div className="flex items-center justify-between pt-4 border-t border-white/5">
+                          <div className="flex items-center space-x-2 text-gray-500">
+                            <MapPin size={12} />
+                            <span className="text-[9px] font-bold uppercase tracking-widest">{match.location}</span>
+                          </div>
+                          <button className="text-accent hover:text-white transition-colors">
+                            <ChevronRight size={18} />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
     </div>
   );
 }
+
