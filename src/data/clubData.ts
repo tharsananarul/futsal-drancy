@@ -214,11 +214,11 @@ export const CLUB_DATA = {
 
   // L'effectif
   players: [
-    { name: 'Ricardo S.', role: 'Pivot / Capitaine', number: '10', image: 'https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?q=80&w=2670&auto=format&fit=crop' },
-    { name: 'Hamza B.', role: 'Fixe', number: '4', image: 'https://images.unsplash.com/photo-1431324155629-1a6eda1dc3f7?q=80&w=2670&auto=format&fit=crop' },
-    { name: 'Lucas M.', role: 'Ailier', number: '7', image: 'https://images.unsplash.com/photo-1544606114-1e5828453664?q=80&w=2670&auto=format&fit=crop' },
-    { name: 'Yannis K.', role: 'Gardien', number: '1', image: 'https://images.unsplash.com/photo-1510566337590-2fc1f21d0faa?q=80&w=2670&auto=format&fit=crop' },
-    { name: 'Enzo F.', role: 'Ailier', number: '11', image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2670&auto=format&fit=crop' },
-    { name: 'Sofiane R.', role: 'Fixe', number: '5', image: 'https://images.unsplash.com/photo-1517466787929-bc9406155b08?q=80&w=2670&auto=format&fit=crop' },
+    { name: 'Ricardo S.', role: 'Pivot / Capitaine', number: '10', image: getAssetPath('images/1.png') },
+    { name: 'Hamza B.', role: 'Fixe', number: '4', image: getAssetPath('images/2.png') },
+    { name: 'Lucas M.', role: 'Ailier', number: '7', image: getAssetPath('images/3.png') },
+    { name: 'Yannis K.', role: 'Gardien', number: '1', image: getAssetPath('images/4.png') },
+    { name: 'Enzo F.', role: 'Ailier', number: '11', image: getAssetPath('images/5.png') },
+    { name: 'Sofiane R.', role: 'Fixe', number: '5', image: getAssetPath('images/6.png') },
   ]
 };
