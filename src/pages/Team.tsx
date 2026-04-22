@@ -67,6 +67,64 @@ export default function Team() {
             </motion.div>
           ))}
         </motion.div>
+        {/* Categories Table Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-32 max-w-4xl mx-auto"
+        >
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-3xl md:text-5xl text-white font-display font-black uppercase tracking-tighter">
+              Guide des <span className="text-accent">Catégories</span>
+            </h2>
+            <p className="text-gray-500 text-xs md:text-sm uppercase tracking-widest font-bold">
+              Trouvez votre équipe selon votre année de naissance (Saison 2025/2026)
+            </p>
+          </div>
+
+          <div className="overflow-x-auto pb-8">
+            <table className="w-full border-collapse min-w-[600px]">
+              <thead>
+                <tr className="border-b-2 border-accent">
+                  <th className="bg-white/5 p-6 text-white text-xs font-black uppercase tracking-widest text-center">Année de Naissance</th>
+                  <th className="bg-white/5 p-6 text-white text-xs font-black uppercase tracking-widest text-center border-x border-white/5">Catégories (G - F)</th>
+                  <th className="bg-white/5 p-6 text-white text-xs font-black uppercase tracking-widest text-center">Âge Approximatif</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { year: '2020', cat: 'U6 - U6F', age: 'Dès 5 ans' },
+                  { year: '2019', cat: 'U7 - U7F', age: '6 ans' },
+                  { year: '2018', cat: 'U8 - U8F', age: '7 ans' },
+                  { year: '2017', cat: 'U9 - U9F', age: '8 ans' },
+                  { year: '2016', cat: 'U10 - U10F', age: '9 ans' },
+                  { year: '2015', cat: 'U11 - U11F', age: '10 ans' },
+                  { year: '2014', cat: 'U12 - U12F', age: '11 ans' },
+                  { year: '2013', cat: 'U13 - U13F', age: '12 ans' },
+                  { year: '2012', cat: 'U14 - U14F', age: '13 ans' },
+                  { year: '2011', cat: 'U15 - U15F', age: '14 ans' },
+                  { year: '2010', cat: 'U16 - U16F', age: '15 ans' },
+                  { year: '2009', cat: 'U17 - U17F', age: '16 ans' },
+                  { year: '2008', cat: 'U18 - U18F', age: '17 ans' },
+                  { year: '2007', cat: 'U19 - U19F', age: '18 ans' },
+                  { year: '1991 à 2006', cat: 'Séniors - Séniors F', age: '19 à 34 ans' },
+                ].map((row, i) => (
+                  <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                    <td className="p-5 text-accent font-black text-center text-sm">{row.year}</td>
+                    <td className="p-5 text-white font-black text-center text-sm border-x border-white/5">{row.cat}</td>
+                    <td className="p-5 text-gray-400 font-bold text-center text-xs uppercase tracking-widest">{row.age}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          
+          <div className="mt-8 flex items-center justify-center space-x-2 text-white/20">
+            <div className="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
+            <span className="text-[10px] font-black uppercase tracking-[0.3em]">Ouvert aux Garçons et aux Filles</span>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
