@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "1ère Édition CAN Féminine Futsal",
+    "date": "Août 2025",
+    "image": "images/post can féminine.png",
+    "excerpt": "Une semaine de compétition historique, de passion et de mise en lumière du futsal au féminin ! Merci à toutes les participantes et supporters pour cette première édition réussie.",
+    "instagramUrl": "https://www.instagram.com/futsal_drancy/"
+  },
+  {
+    "id": 2,
+    "title": "Le Futsal Drancy recherche des Bénévoles",
+    "date": "21 Avril 2026",
+    "image": "images/4.png",
+    "excerpt": "Le club grandit ! Nous recherchons activement des bénévoles et des éducateurs passionnés pour encadrer nos jeunes catégories la saison prochaine. Rejoignez l'aventure.",
+    "instagramUrl": "https://www.instagram.com/futsal_drancy/"
+  },
+  {
+    "id": 3,
+    "title": "Victoire cruciale en Championnat",
+    "date": "18 Avril 2026",
+    "image": "images/5.png",
+    "excerpt": "Match d'une intensité incroyable de nos Séniors A qui s'imposent à domicile face à Toulouse dans une ambiance de feu. Merci au public pour le soutien !",
+    "instagramUrl": "https://www.instagram.com/futsal_drancy/"
+  }
+]
