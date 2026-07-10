@@ -10,9 +10,13 @@ export default function Team() {
   return (
     <div className="pt-32 pb-24 bg-navy-dark min-h-screen">
       <div className="section-container">
-        <div className="text-center space-y-4 mb-16">
-          <span className="text-accent font-black tracking-[0.3em] uppercase text-xs">Saison {season}</span>
-          <h1 className="text-4xl md:text-8xl text-white font-display font-black uppercase tracking-tighter">LES <br/> ÉQUIPES</h1>
+        <div className="text-center space-y-4 mb-16 mx-auto max-w-3xl">
+          <div className="flex items-center justify-center space-x-4 mb-2">
+            <div className="w-12 h-[1px] bg-accent/30"></div>
+            <span className="text-accent font-black tracking-[0.4em] uppercase text-[9px]">Saison {season}</span>
+            <div className="w-12 h-[1px] bg-accent/30"></div>
+          </div>
+          <h1 className="text-3xl md:text-6xl lg:text-8xl text-white leading-[0.9] font-display font-black uppercase tracking-tighter">LES <br/> ÉQUIPES</h1>
         </div>
 
         {/* Section Selector */}

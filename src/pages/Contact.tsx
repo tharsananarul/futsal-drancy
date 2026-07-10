@@ -70,14 +70,14 @@ export default function Contact() {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center space-y-6 mb-24"
+          className="text-center space-y-4 mb-16 mx-auto max-w-3xl"
         >
-          <div className="flex items-center justify-center space-x-4 mb-4">
+          <div className="flex items-center justify-center space-x-4 mb-2">
             <div className="w-12 h-[1px] bg-accent/30"></div>
-            <span className="text-accent font-black tracking-[0.4em] uppercase text-[10px]">Get in touch</span>
+            <span className="text-accent font-black tracking-[0.4em] uppercase text-[9px]">Get in touch</span>
             <div className="w-12 h-[1px] bg-accent/30"></div>
           </div>
-          <h1 className="text-4xl md:text-8xl lg:text-9xl text-white leading-[0.8] font-display font-black uppercase tracking-tighter">
+          <h1 className="text-3xl md:text-6xl lg:text-8xl text-white leading-[0.9] font-display font-black uppercase tracking-tighter">
             CONTACTEZ <br/> <span className="text-accent">LA MEUTE.</span>
           </h1>
         </motion.div>

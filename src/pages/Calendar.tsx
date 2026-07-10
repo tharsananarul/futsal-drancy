@@ -20,17 +20,17 @@ export default function CalendarPage() {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center space-y-6 mb-24"
+          className="text-center space-y-4 mb-16 mx-auto max-w-3xl"
         >
-          <div className="flex items-center justify-center space-x-4 mb-4">
+          <div className="flex items-center justify-center space-x-4 mb-2">
             <div className="w-12 h-[1px] bg-accent/30"></div>
-            <span className="text-accent font-black tracking-[0.4em] uppercase text-[10px]">Compétition {CLUB_DATA.season}</span>
+            <span className="text-accent font-black tracking-[0.4em] uppercase text-[9px]">Compétition {CLUB_DATA.season}</span>
             <div className="w-12 h-[1px] bg-accent/30"></div>
           </div>
-          <h1 className="text-4xl md:text-7xl lg:text-9xl text-white leading-[0.8] font-display font-black uppercase tracking-tighter">
+          <h1 className="text-3xl md:text-6xl lg:text-8xl text-white leading-[0.9] font-display font-black uppercase tracking-tighter">
             AGENDA DU <br/> <span className="text-accent">CLUB.</span>
           </h1>
-          <p className="text-gray-400 text-xs md:text-sm max-w-lg mx-auto uppercase tracking-[0.2em] font-bold">
+          <p className="text-gray-500 text-[10px] md:text-xs mx-auto uppercase tracking-[0.2em] font-bold">
             Consultez les dates, lieux et résultats de toutes nos catégories en temps réel.
           </p>
         </motion.div>
