@@ -1,0 +1,38 @@
+[
+  { 
+    "team": "Séniors A", 
+    "opponent": "St Pierre", 
+    "score": "5 - 2", 
+    "date": "18/04", 
+    "context": "Championnat D1", 
+    "status": "Victoire",
+    "location": "Extérieur"
+  },
+  { 
+    "team": "Séniors B", 
+    "opponent": "Toulouse", 
+    "score": "3 - 1", 
+    "date": "17/04", 
+    "context": "Coupe de France", 
+    "status": "Victoire",
+    "location": "Domicile"
+  },
+  { 
+    "team": "U18", 
+    "opponent": "Lille", 
+    "score": "4 - 4", 
+    "date": "16/04", 
+    "context": "Championnat", 
+    "status": "Nul",
+    "location": "Extérieur"
+  },
+  { 
+    "team": "U15", 
+    "opponent": "Bondy", 
+    "score": "2 - 3", 
+    "date": "15/04", 
+    "context": "Championnat", 
+    "status": "Défaite",
+    "location": "Domicile"
+  }
+]

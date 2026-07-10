@@ -1,4 +1,6 @@
 import { getAssetPath } from '../utils/assets';
+import recentResults from './resultats.json';
+import planningData from './planning.json';
 
 export const CLUB_DATA = {
   name: "Futsal Drancy",
@@ -7,97 +9,13 @@ export const CLUB_DATA = {
   presentation: "Référence du futsal en Seine-Saint-Denis, le Futsal Drancy mise sur la formation d'excellence des jeunes, un engagement communautaire fort et un esprit collectif inébranlable.",
   
   // Les derniers résultats
-  recentResults: [
-    { 
-      team: 'Séniors A', 
-      opponent: 'St Pierre', 
-      score: '5 - 2', 
-      date: '18/04', 
-      context: 'Championnat D1', 
-      status: 'Victoire',
-      location: 'Extérieur'
-    },
-    { 
-      team: 'Séniors B', 
-      opponent: 'Toulouse', 
-      score: '3 - 1', 
-      date: '17/04', 
-      context: 'Coupe de France', 
-      status: 'Victoire',
-      location: 'Domicile'
-    },
-    { 
-      team: 'U18', 
-      opponent: 'Lille', 
-      score: '4 - 4', 
-      date: '16/04', 
-      context: 'Championnat', 
-      status: 'Nul',
-      location: 'Extérieur'
-    },
-    { 
-      team: 'U15', 
-      opponent: 'Bondy', 
-      score: '2 - 3', 
-      date: '15/04', 
-      context: 'Championnat', 
-      status: 'Défaite',
-      location: 'Domicile'
-    },
-  ],
+  recentResults: recentResults,
 
   // Prochains matchs
-  upcomingMatches: [
-    { 
-      team: 'Séniors A', 
-      opponent: 'Strasbourg', 
-      date: 'Sam. 26 Avril', 
-      time: '18:00', 
-      location: 'Gymnase Joliot Curie',
-      context: 'Championnat D1'
-    },
-    { 
-      team: 'Séniors B', 
-      opponent: 'Nantes', 
-      date: 'Sam. 26 Avril', 
-      time: '16:00', 
-      location: 'Palais des Sports',
-      context: 'Championnat D2'
-    },
-    { 
-      team: 'U18', 
-      opponent: 'Marseille', 
-      date: 'Dim. 27 Avril', 
-      time: '14:00', 
-      location: 'Gymnase Joliot Curie',
-      context: 'Championnat U18'
-    },
-  ],
+  upcomingMatches: planningData.upcomingMatches,
 
   // Calendrier complet par catégories
-  calendar: [
-    {
-      category: 'Séniors',
-      matches: [
-        { opponent: 'Strasbourg', date: '26/04', time: '18:00', location: 'Domicile', type: 'Championnat' },
-        { opponent: 'Nantes', date: '03/05', time: '20:00', location: 'Extérieur', type: 'Championnat' },
-        { opponent: 'Marseille', date: '10/05', time: '18:00', location: 'Domicile', type: 'Championnat' },
-      ]
-    },
-    {
-      category: 'U18',
-      matches: [
-        { opponent: 'Marseille', date: '27/04', time: '14:00', location: 'Domicile', type: 'Championnat' },
-        { opponent: 'Lyon', date: '04/05', time: '15:00', location: 'Extérieur', type: 'Championnat' },
-      ]
-    },
-    {
-      category: 'U15',
-      matches: [
-        { opponent: 'Paris FC', date: '26/04', time: '11:00', location: 'Extérieur', type: 'Championnat' },
-      ]
-    }
-  ],
+  calendar: planningData.calendar,
 
   // Valeurs du club
   values: [

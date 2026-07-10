@@ -1,4 +1,4 @@
-cd "portfolio-react"
+cd "futsal drancy"
 
 npm install
 

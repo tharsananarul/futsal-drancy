@@ -59,10 +59,14 @@ export default function Registration() {
             <h3 className="text-3xl text-white font-black uppercase">Dossier d'Inscription</h3>
             <p className="text-gray-400 text-sm uppercase tracking-widest">Format PDF - 2.4 Mo</p>
           </div>
-          <button className="btn-accent flex items-center space-x-3 w-full md:w-auto justify-center">
+          <a 
+            href={getAssetPath('dossier-inscription.pdf')}
+            download="dossier-inscription-futsal-drancy.pdf"
+            className="btn-accent flex items-center space-x-3 w-full md:w-auto justify-center"
+          >
             <FileText size={18} />
             <span>Télécharger le dossier</span>
-          </button>
+          </a>
         </motion.div>
 
         <div className="space-y-12">

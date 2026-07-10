@@ -1,0 +1,51 @@
+{
+  "upcomingMatches": [
+    { 
+      "team": "Séniors A", 
+      "opponent": "Strasbourg", 
+      "date": "Sam. 26 Avril", 
+      "time": "18:00", 
+      "location": "Gymnase Joliot Curie",
+      "context": "Championnat D1"
+    },
+    { 
+      "team": "Séniors B", 
+      "opponent": "Nantes", 
+      "date": "Sam. 26 Avril", 
+      "time": "16:00", 
+      "location": "Palais des Sports",
+      "context": "Championnat D2"
+    },
+    { 
+      "team": "U18", 
+      "opponent": "Marseille", 
+      "date": "Dim. 27 Avril", 
+      "time": "14:00", 
+      "location": "Gymnase Joliot Curie",
+      "context": "Championnat U18"
+    }
+  ],
+  "calendar": [
+    {
+      "category": "Séniors",
+      "matches": [
+        { "opponent": "Strasbourg", "date": "26/04", "time": "18:00", "location": "Domicile", "type": "Championnat" },
+        { "opponent": "Nantes", "date": "03/05", "time": "20:00", "location": "Extérieur", "type": "Championnat" },
+        { "opponent": "Marseille", "date": "10/05", "time": "18:00", "location": "Domicile", "type": "Championnat" }
+      ]
+    },
+    {
+      "category": "U18",
+      "matches": [
+        { "opponent": "Marseille", "date": "27/04", "time": "14:00", "location": "Domicile", "type": "Championnat" },
+        { "opponent": "Lyon", "date": "04/05", "time": "15:00", "location": "Extérieur", "type": "Championnat" }
+      ]
+    },
+    {
+      "category": "U15",
+      "matches": [
+        { "opponent": "Paris FC", "date": "26/04", "time": "11:00", "location": "Extérieur", "type": "Championnat" }
+      ]
+    }
+  ]
+}

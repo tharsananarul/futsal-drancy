@@ -17,14 +17,35 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
   const location = useLocation();
+
+  const updateCartCount = () => {
+    const savedCart = localStorage.getItem('futsal_drancy_cart');
+    if (savedCart) {
+      try {
+        const cart = JSON.parse(savedCart);
+        const count = cart.reduce((total: number, item: any) => total + item.quantity, 0);
+        setCartCount(count);
+      } catch (e) {
+        setCartCount(0);
+      }
+    } else {
+      setCartCount(0);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    updateCartCount();
+    window.addEventListener('cart-updated', updateCartCount);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('cart-updated', updateCartCount);
+    };
   }, []);
 
   useEffect(() => {
@@ -62,12 +83,17 @@ export default function Navbar() {
               key={link.path} 
               to={link.path}
               className={({ isActive }) => 
-                `text-[10px] font-black uppercase tracking-[0.3em] transition-all hover:text-accent ${
+                `text-[10px] font-black uppercase tracking-[0.3em] transition-all hover:text-accent flex items-center ${
                   isActive ? 'text-accent' : 'text-white/60'
                 }`
               }
             >
-              {link.name}
+              <span>{link.name}</span>
+              {link.name === 'Boutique' && cartCount > 0 && (
+                <span className="ml-2 bg-accent text-navy-dark text-[8px] font-black w-4 h-4 rounded-full flex items-center justify-center animate-pulse">
+                  {cartCount}
+                </span>
+              )}
             </NavLink>
           ))}
           <NavLink to="/registration" className="btn-accent px-8 py-3 text-[10px]">
@@ -78,9 +104,18 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-white p-2 hover:text-accent transition-colors relative z-[10002]"
+          className="lg:hidden text-white p-2 hover:text-accent transition-colors relative z-[10002] flex items-center"
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={28} /> : (
+            <div className="relative">
+              <Menu size={28} />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-accent text-navy-dark text-[8px] font-black w-4 h-4 rounded-full flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
+            </div>
+          )}
         </button>
       </div>
 
@@ -117,12 +152,17 @@ export default function Navbar() {
                       to={link.path}
                       onClick={() => setIsOpen(false)}
                       className={({ isActive }) => 
-                        `uppercase text-xs tracking-[0.3em] font-bold transition-all block py-3 ${
+                        `uppercase text-xs tracking-[0.3em] font-bold transition-all flex items-center justify-between py-3 ${
                           isActive ? 'text-accent' : 'text-white/60 hover:text-white'
                         }`
                       }
                     >
-                      {link.name}
+                      <span>{link.name}</span>
+                      {link.name === 'Boutique' && cartCount > 0 && (
+                        <span className="bg-accent text-navy-dark text-[8px] font-black w-4 h-4 rounded-full flex items-center justify-center">
+                          {cartCount}
+                        </span>
+                      )}
                     </NavLink>
                   </motion.div>
                 ))}
@@ -138,3 +178,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
