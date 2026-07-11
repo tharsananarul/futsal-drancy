@@ -46,7 +46,7 @@ export const CLUB_DATA = {
     phone: "01 48 96 50 00",
     email: "550738@lpiff.fr",
     socials: {
-      instagram: "https://instagram.com/futsaldrancy",
+      instagram: "https://www.instagram.com/futsal_drancy/",
       facebook: "https://facebook.com/futsaldrancy",
       tiktok: "https://tiktok.com/@futsaldrancy",
       youtube: "https://youtube.com/@futsaldrancy"
