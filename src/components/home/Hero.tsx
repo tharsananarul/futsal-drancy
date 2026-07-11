@@ -18,6 +18,10 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
         {/* Animated Gradient Overlay */}
         <div className="absolute inset-0 bg-linear-to-b from-navy-dark/80 via-transparent to-navy-dark"></div>
+        {/* Accent ambient glow - bottom */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent/10 rounded-full blur-[120px] pointer-events-none"></div>
+        {/* Accent ambient glow - top right */}
+        <div className="absolute top-10 right-10 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
       </div>
 
       <div className="section-container relative z-10 text-center space-y-8">
@@ -41,7 +45,7 @@ export default function Hero() {
           </h1>
           
           <div className="max-w-2xl mx-auto space-y-6">
-            <p className="text-xl md:text-2xl text-white/90 font-black uppercase tracking-widest border-y border-white/10 py-4">
+            <p className="text-xl md:text-2xl text-white/90 font-black uppercase tracking-widest border-y border-accent/30 py-4 [text-shadow:0_0_30px_rgba(245,185,9,0.2)]">
               {motto}
             </p>
             <p className="text-gray-400 text-sm md:text-base leading-relaxed font-medium max-w-lg mx-auto">
@@ -51,9 +55,9 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Decorative Watermark */}
-      <div className="absolute bottom-10 right-10 opacity-5 pointer-events-none select-none">
-        <img src={getAssetPath('assets/logos/drancy-futsal.png')} alt="" className="w-64 h-64 grayscale" />
+      {/* Decorative Watermark - slightly yellow tinted */}
+      <div className="absolute bottom-10 right-10 opacity-10 pointer-events-none select-none" style={{filter: 'sepia(1) saturate(2) hue-rotate(10deg)'}}>
+        <img src={getAssetPath('assets/logos/drancy-futsal.png')} alt="" className="w-64 h-64" />
       </div>
 
       {/* Scroll Indicator */}

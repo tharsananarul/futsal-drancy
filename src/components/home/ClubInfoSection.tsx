@@ -46,11 +46,11 @@ export default function ClubInfoSection() {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-start space-x-6 group"
                   >
-                    <div className="bg-white/5 border border-white/10 p-4 rounded-xl group-hover:bg-accent transition-colors">
+                    <div className="bg-white/5 border border-accent/20 p-4 rounded-xl group-hover:bg-accent group-hover:shadow-[0_0_20px_rgba(245,185,9,0.4)] transition-all duration-300">
                       <Icon className="text-accent group-hover:text-navy-dark transition-colors" size={24} />
                     </div>
                     <div className="space-y-2">
-                      <h4 className="font-display font-black text-white text-xl uppercase">{value.title}</h4>
+                      <h4 className="font-display font-black text-white text-xl uppercase group-hover:text-accent transition-colors duration-300">{value.title}</h4>
                       <p className="text-gray-500 text-sm leading-relaxed max-w-xs">{value.description}</p>
                     </div>
                   </motion.div>

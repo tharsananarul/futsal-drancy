@@ -7,9 +7,12 @@ export default function Footer() {
   const { contact, name, motto } = CLUB_DATA;
 
   return (
-    <footer className="bg-[#020d1c] border-t border-white/5 pt-20 pb-10 overflow-hidden relative">
+    <footer className="bg-[#020d1c] border-t-2 border-accent/30 pt-20 pb-10 overflow-hidden relative">
+      {/* Golden top glow line */}
+      <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-accent/60 to-transparent"></div>
       {/* Premium glowing background accent */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/3 blur-[150px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/8 blur-[150px] rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/5 blur-[100px] rounded-full pointer-events-none"></div>
       
       <div className="section-container relative z-10">
         {/* Main Grid */}
@@ -160,6 +163,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
+        {/* Accent divider */}
+        <div className="h-px bg-linear-to-r from-transparent via-accent/25 to-transparent mb-2"></div>
         <div className="pt-8 border-t border-white/5">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-[9px] font-black uppercase tracking-[0.2em]">
             <div className="flex flex-col md:flex-row items-center gap-3 md:gap-8 text-white/30">
@@ -173,7 +178,7 @@ export default function Footer() {
             </div>
 
             <div className="hidden xl:block">
-              <p className="text-[8px] text-white/15 font-black tracking-[0.4em] uppercase">Passion • Formation • Performance</p>
+              <p className="text-[8px] text-accent/40 font-black tracking-[0.4em] uppercase">Passion • Formation • Performance</p>
             </div>
             
             <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-white/20">
