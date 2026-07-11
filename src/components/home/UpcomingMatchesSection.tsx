@@ -70,13 +70,11 @@ export default function UpcomingMatchesSection() {
                 </div>
 
                 <div className="flex items-center space-x-3">
-                  <MapPin size={18} className="text-gray-500" />
-                  <span className="text-gray-400 text-xs lg:text-sm font-bold uppercase tracking-widest max-w-[140px] line-clamp-1">{match.location}</span>
+                  <MapPin size={18} className="text-accent shrink-0" />
+                  <span className="text-gray-400 text-xs lg:text-sm font-bold uppercase tracking-widest">{match.location}</span>
                 </div>
 
-                <button className="bg-accent/10 border border-accent/20 text-accent px-6 py-2.5 rounded-xl text-[10px] lg:text-xs font-black uppercase tracking-widest hover:bg-accent hover:text-navy-dark transition-all">
-                  Détails
-                </button>
+
               </div>
             </motion.div>
           ))}
