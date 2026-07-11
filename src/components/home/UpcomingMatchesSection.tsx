@@ -34,11 +34,12 @@ export default function UpcomingMatchesSection() {
           {upcomingMatches.map((match, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, clipPath: "inset(0 100% 0 0)", x: -20 }}
+              whileInView={{ opacity: 1, clipPath: "inset(0 0% 0 0)", x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white/5 border border-white/5 p-4 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 hover:bg-white/[0.08] transition-all group"
+              transition={{ delay: index * 0.12, duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
+              whileHover={{ x: 6, transition: { duration: 0.25, ease: "easeOut" } }}
+              className="bg-white/5 border border-white/5 p-4 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 hover:bg-white/[0.08] hover:border-accent/20 hover:shadow-[4px_0_30px_rgba(245,185,9,0.05)] transition-colors duration-500 group"
             >
               <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12 text-center md:text-left flex-1">
                 <div className="flex flex-col">
