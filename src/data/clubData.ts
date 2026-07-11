@@ -47,7 +47,7 @@ export const CLUB_DATA = {
     email: "550738@lpiff.fr",
     socials: {
       instagram: "https://www.instagram.com/futsal_drancy/",
-      facebook: "https://facebook.com/futsaldrancy",
+      facebook: "https://www.facebook.com/share/1aZ3KgM3Nm/?mibextid=wwXIfr",
       tiktok: "https://tiktok.com/@futsaldrancy",
       youtube: "https://youtube.com/@futsaldrancy"
     }
