@@ -6,6 +6,7 @@ import LatestNews from '../components/home/LatestNews';
 import FeaturedEvent from '../components/home/FeaturedEvent';
 import RecruitmentSection from '../components/home/RecruitmentSection';
 import ClubInfoSection from '../components/home/ClubInfoSection';
+import StatsOverview from '../components/home/StatsOverview';
 import PartnersSection from '../components/home/PartnersSection';
 import { motion } from 'motion/react';
 
@@ -35,10 +36,14 @@ export default function Home() {
       
       {/* 7. PRÉSENTATION DU CLUB (SECONDAIRE) */}
       <ClubInfoSection />
+
+      {/* 7.5 STATISTIQUES DU CLUB */}
+      <StatsOverview />
       
       {/* 8. PARTENAIRES */}
       <PartnersSection />
     </div>
   );
 }
+
 

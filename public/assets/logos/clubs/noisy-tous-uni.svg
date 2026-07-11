@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120">
+  <!-- Shield -->
+  <path d="M50 4 L90 18 L90 62 C90 88 50 116 50 116 C50 116 10 88 10 62 L10 18 Z" fill="#003087" stroke="#ffffff" stroke-width="3.5"/>
+  <path d="M50 12 L84 24 L84 62 C84 84 50 108 50 108 C50 108 16 84 16 62 L16 24 Z" fill="#003087"/>
+  <!-- White chevron -->
+  <path d="M30 50 L50 30 L70 50 L65 55 L50 38 L35 55 Z" fill="#ffffff"/>
+  <!-- Club initials -->
+  <text x="50" y="75" font-family="'Impact', 'Arial Black', sans-serif" font-size="15" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-1">NTU</text>
+  <text x="50" y="96" font-family="'Arial', sans-serif" font-size="6" font-weight="700" fill="#87ceeb" text-anchor="middle" letter-spacing="0.5">NOISY TOUS UNI</text>
+</svg>

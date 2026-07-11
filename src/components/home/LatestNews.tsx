@@ -38,21 +38,23 @@ export default function LatestNews() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="bg-white/5 border border-white/5 overflow-hidden flex flex-col group hover:border-accent/30 transition-all"
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              className="glass-card card-hover overflow-hidden flex flex-col group rounded-3xl transition-all duration-500 cursor-pointer"
             >
+
+
               {/* Header style feed */}
-              <div className="p-4 flex items-center justify-between border-b border-white/5">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center font-black text-navy-dark text-[10px]">FD</div>
+              <div className="p-5 flex items-center justify-between border-b border-white/5">
+                <div className="flex items-center space-x-3.5">
+                  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center font-black text-navy-dark text-xs">FD</div>
                   <div className="flex flex-col">
-                    <span className="text-white text-[10px] font-black uppercase tracking-widest">Futsal Drancy</span>
-                    <span className="text-gray-500 text-[8px] font-bold uppercase">{item.author}</span>
+                    <span className="text-white text-xs font-black uppercase tracking-widest">Futsal Drancy</span>
+                    <span className="text-gray-500 text-[10px] lg:text-xs font-bold uppercase">{item.author}</span>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2 text-gray-500">
-                  <Calendar size={12} />
-                  <span className="text-[9px] font-bold uppercase">{item.date}</span>
+                  <Calendar size={14} />
+                  <span className="text-[10px] lg:text-xs font-bold uppercase">{item.date}</span>
                 </div>
               </div>
 
@@ -63,33 +65,34 @@ export default function LatestNews() {
                   alt={item.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest">
+                <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white px-3.5 py-1.5 rounded-full text-[10px] lg:text-xs font-black uppercase tracking-widest">
                   #{item.category.toLowerCase()}
                 </div>
               </div>
               
               {/* Actions like social media */}
-              <div className="p-4 flex items-center space-x-6 border-y border-white/5">
-                <Heart size={18} className="text-white/40 hover:text-red-500 cursor-pointer transition-colors" />
-                <MessageCircle size={18} className="text-white/40 hover:text-accent cursor-pointer transition-colors" />
-                <Share2 size={18} className="text-white/40 hover:text-blue-400 cursor-pointer transition-colors" />
+              <div className="p-5 flex items-center space-x-6 border-y border-white/5">
+                <Heart size={20} className="text-white/40 hover:text-red-500 cursor-pointer transition-colors" />
+                <MessageCircle size={20} className="text-white/40 hover:text-accent cursor-pointer transition-colors" />
+                <Share2 size={20} className="text-white/40 hover:text-blue-400 cursor-pointer transition-colors" />
               </div>
 
               {/* Content */}
-              <div className="p-6 space-y-4 flex-1">
-                <h3 className="text-xl text-white font-black uppercase leading-tight group-hover:text-accent transition-colors">
+              <div className="p-6 md:p-8 space-y-4 flex-1">
+                <h3 className="text-xl lg:text-2xl text-white font-black uppercase leading-tight group-hover:text-accent transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+                <p className="text-gray-400 text-sm lg:text-base leading-relaxed line-clamp-3">
                   {item.excerpt}
                 </p>
                 <NavLink 
                   to={`/news/${item.id}`}
-                  className="inline-block text-accent font-black text-[10px] uppercase tracking-[0.3em] border-b border-accent/20 pb-1 hover:border-accent transition-all"
+                  className="inline-block text-accent font-black text-xs uppercase tracking-[0.3em] border-b border-accent/20 pb-1.5 hover:border-accent transition-all"
                 >
                   Lire l'article
                 </NavLink>
               </div>
+
             </motion.article>
           ))}
         </div>

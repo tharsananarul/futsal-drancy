@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 130" width="100%" height="100%">
+  <!-- Background Shield -->
+  <path d="M50 5 C50 5 90 20 90 60 C90 100 50 125 50 125 C50 125 10 100 10 60 C10 20 50 5 50 5 Z" fill="#0c2340" stroke="#d4af37" stroke-width="4" />
+  
+  <!-- Two Stars (World Champions) -->
+  <g fill="#d4af37">
+    <polygon points="38,20 41,25 47,25 42,29 44,35 38,31 32,35 34,29 29,25 35,25" />
+    <polygon points="62,20 65,25 71,25 66,29 68,35 62,31 56,35 58,29 53,25 59,25" />
+  </g>
+
+  <!-- French Rooster (Coq Gaulois) -->
+  <path d="M50 38 
+           C46 38, 43 41, 41 45 
+           C41 43, 39 41, 37 41 
+           C35 41, 33 43, 33 46 
+           C33 50, 37 54, 40 58 
+           C42 61, 43 65, 43 68 
+           C43 72, 40 76, 37 80 
+           C41 80, 45 78, 47 75 
+           C49 78, 53 80, 57 80 
+           C61 80, 64 77, 64 73 
+           C64 68, 60 64, 57 61 
+           C54 58, 53 54, 53 50 
+           C53 43, 52 38, 50 38 Z" fill="#d4af37" />
+  
+  <path d="M47 48 C45 48, 44 49, 44 51 C44 53, 46 54, 48 54 C50 54, 51 52, 51 50 C51 49, 49 48, 47 48 Z" fill="#ffffff" />
+  <circle cx="48" cy="51" r="1.5" fill="#0c2340" />
+
+  <!-- FFF Text -->
+  <text x="50" y="105" font-family="'Inter', 'Outfit', sans-serif" font-size="20" font-weight="900" fill="#d4af37" text-anchor="middle" letter-spacing="2">FFF</text>
+</svg>

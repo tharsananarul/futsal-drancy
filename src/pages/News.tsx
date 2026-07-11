@@ -63,39 +63,39 @@ export default function NewsPage() {
                 </div>
 
                 {/* Text Content */}
-                <div className="space-y-1.5 px-3 md:px-4">
+                <div className="space-y-2 px-4 md:px-5">
                   {/* Meta info */}
-                  <div className="flex items-center justify-between text-[8px] md:text-[9px] text-gray-500 font-bold uppercase tracking-wider mb-1">
-                    <span className="flex items-center space-x-1">
-                      <Calendar size={10} className="text-accent/60" />
+                  <div className="flex items-center justify-between text-[9px] md:text-[10px] lg:text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">
+                    <span className="flex items-center space-x-1.5">
+                      <Calendar size={12} className="text-accent/60" />
                       <span>{item.date}</span>
                     </span>
                     <span className="text-accent/80">#instagram</span>
                   </div>
 
-                  <h3 className="text-xs md:text-sm text-white font-display font-black uppercase leading-tight group-hover:text-accent transition-colors line-clamp-1">
+                  <h3 className="text-sm md:text-base lg:text-lg text-white font-display font-black uppercase leading-tight group-hover:text-accent transition-colors line-clamp-1">
                     {item.title}
                   </h3>
-                  <p className="text-gray-400 text-[10px] md:text-xs leading-relaxed line-clamp-2">
+                  <p className="text-gray-400 text-xs md:text-sm lg:text-[14px] leading-relaxed line-clamp-2">
                     {item.excerpt}
                   </p>
                 </div>
               </div>
 
               {/* Card Footer Actions */}
-              <div className="p-3 md:p-4 pt-0 mt-4 flex items-center justify-between">
+              <div className="p-4 md:p-5 pt-0 mt-4 flex items-center justify-between">
                 <a 
                   href={item.instagramUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-1.5 text-accent font-black text-[8px] md:text-[9px] uppercase tracking-[0.25em] group/btn"
+                  className="flex items-center space-x-1.5 text-accent font-black text-[9px] md:text-[10px] lg:text-xs uppercase tracking-[0.25em] group/btn"
                 >
                   <span>Voir le post</span>
-                  <ArrowUpRight size={12} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </a>
                 
                 <div className="flex items-center space-x-2 text-gray-500">
-                  <Heart size={12} className="hover:text-red-500 cursor-pointer transition-colors" />
+                  <Heart size={14} className="hover:text-red-500 cursor-pointer transition-colors" />
                 </div>
               </div>
             </motion.article>

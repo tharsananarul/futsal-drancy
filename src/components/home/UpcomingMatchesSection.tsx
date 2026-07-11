@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { CLUB_DATA } from '../../data/clubData';
 import { Calendar, MapPin, Clock, ArrowRight } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
+import { ClubLogo } from '../ui/ClubLogo';
 
 export default function UpcomingMatchesSection() {
   const { upcomingMatches } = CLUB_DATA;
@@ -41,32 +42,39 @@ export default function UpcomingMatchesSection() {
             >
               <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12 text-center md:text-left flex-1">
                 <div className="flex flex-col">
-                  <span className="text-accent font-black text-xs uppercase tracking-tighter">{match.team}</span>
-                  <span className="text-white/40 text-[10px] font-bold uppercase tracking-widest">{match.context}</span>
+                  <span className="text-accent font-black text-sm lg:text-base uppercase tracking-tighter">{match.team}</span>
+                  <span className="text-white/40 text-xs lg:text-sm font-bold uppercase tracking-widest">{match.context}</span>
                 </div>
 
-                <div className="flex items-center gap-4 md:gap-8">
-                  <div className="text-xl md:text-2xl text-white font-black uppercase">DRANCY</div>
-                  <div className="bg-accent/20 text-accent px-3 py-1 rounded text-[10px] font-black">VS</div>
-                  <div className="text-xl md:text-2xl text-white/60 font-black uppercase">{match.opponent}</div>
+                <div className="flex items-center gap-4 md:gap-8 flex-wrap justify-center md:justify-start">
+                  <div className="flex items-center space-x-3">
+                    <ClubLogo name="DRANCY FUTSAL" className="w-8 h-8 md:w-10 md:h-10" />
+                    <div className="text-xl lg:text-2xl text-white font-black uppercase">DRANCY</div>
+                  </div>
+                  <div className="bg-accent/20 text-accent px-3.5 py-1.5 rounded-lg text-xs lg:text-sm font-black">VS</div>
+                  <div className="flex items-center space-x-3">
+                    <ClubLogo name={match.opponent} className="w-8 h-8 md:w-10 md:h-10" />
+                    <div className="text-xl lg:text-2xl text-white/60 font-black uppercase">{match.opponent}</div>
+                  </div>
                 </div>
               </div>
 
+
               <div className="flex flex-wrap justify-center md:justify-end items-center gap-6 md:gap-12">
-                <div className="flex items-center space-x-3">
-                  <Clock size={16} className="text-accent" />
+                <div className="flex items-center space-x-3.5">
+                  <Clock size={18} className="text-accent" />
                   <div className="flex flex-col">
-                    <span className="text-white font-black text-xs uppercase tracking-widest">{match.date}</span>
-                    <span className="text-gray-500 text-[10px] font-bold uppercase">{match.time}</span>
+                    <span className="text-white font-black text-sm lg:text-base uppercase tracking-widest">{match.date}</span>
+                    <span className="text-gray-400 text-xs lg:text-sm font-bold uppercase">{match.time}</span>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-3">
-                  <MapPin size={16} className="text-gray-500" />
-                  <span className="text-gray-400 text-[10px] font-bold uppercase tracking-widest max-w-[120px] line-clamp-1">{match.location}</span>
+                  <MapPin size={18} className="text-gray-500" />
+                  <span className="text-gray-400 text-xs lg:text-sm font-bold uppercase tracking-widest max-w-[140px] line-clamp-1">{match.location}</span>
                 </div>
 
-                <button className="bg-accent/10 border border-accent/20 text-accent px-6 py-2 text-[9px] font-black uppercase tracking-widest hover:bg-accent hover:text-navy-dark transition-all">
+                <button className="bg-accent/10 border border-accent/20 text-accent px-6 py-2.5 rounded-xl text-[10px] lg:text-xs font-black uppercase tracking-widest hover:bg-accent hover:text-navy-dark transition-all">
                   Détails
                 </button>
               </div>

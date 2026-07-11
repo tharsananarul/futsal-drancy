@@ -76,7 +76,7 @@ export default function ClubInfoSection() {
             
             {/* Logo Watermark */}
             <div className="absolute -bottom-10 -right-10 w-64 h-64 opacity-5 -z-10">
-              <img src={getAssetPath('logo/futsal-logo.png')} alt="" className="w-full h-full object-contain" />
+              <img src={getAssetPath('assets/logos/drancy-futsal.png')} alt="" className="w-full h-full object-contain" />
             </div>
             {/* Accent Border */}
             <div className="absolute inset-0 border-2 border-accent translate-x-6 translate-y-6 -z-10 rounded-[2rem]"></div>

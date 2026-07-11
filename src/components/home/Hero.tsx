@@ -53,7 +53,7 @@ export default function Hero() {
 
       {/* Decorative Watermark */}
       <div className="absolute bottom-10 right-10 opacity-5 pointer-events-none select-none">
-        <img src={getAssetPath('logo/futsal-logo.png')} alt="" className="w-64 h-64 grayscale" />
+        <img src={getAssetPath('assets/logos/drancy-futsal.png')} alt="" className="w-64 h-64 grayscale" />
       </div>
 
       {/* Scroll Indicator */}

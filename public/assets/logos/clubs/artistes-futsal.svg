@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120">
+  <!-- Shield -->
+  <path d="M50 4 L90 18 L90 62 C90 88 50 116 50 116 C50 116 10 88 10 62 L10 18 Z" fill="#1c1c1c" stroke="#e8c84b" stroke-width="3.5"/>
+  <!-- Star burst / artistic -->
+  <g transform="translate(50,52)">
+    <polygon points="0,-18 4,-7 16,-7 6,0 10,12 0,6 -10,12 -6,0 -16,-7 -4,-7" fill="#e8c84b"/>
+  </g>
+  <!-- Brush stroke accent -->
+  <path d="M28 70 Q50 64 72 70" stroke="#e8c84b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Club name -->
+  <text x="50" y="85" font-family="'Impact', 'Arial Black', sans-serif" font-size="7.5" font-weight="900" fill="#e8c84b" text-anchor="middle" letter-spacing="0.5">ARTISTES</text>
+  <text x="50" y="96" font-family="'Arial', sans-serif" font-size="6.5" font-weight="700" fill="#c0a840" text-anchor="middle" letter-spacing="0.3">FUTSAL</text>
+</svg>

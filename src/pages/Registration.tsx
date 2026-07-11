@@ -116,7 +116,7 @@ export default function Registration() {
           className="mt-32 p-12 glass-card rounded-[3rem] border-accent/20 bg-accent/5 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 p-8 opacity-10">
-             <img src={getAssetPath('logo/futsal-logo.png')} className="w-32 h-32 object-contain" alt="" />
+             <img src={getAssetPath('assets/logos/drancy-futsal.png')} className="w-32 h-32 object-contain" alt="" />
           </div>
           <div className="relative z-10 max-w-3xl">
             <span className="text-accent font-black tracking-[0.4em] uppercase text-[10px] block mb-4">Staff & Encadrement</span>

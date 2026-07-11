@@ -35,9 +35,9 @@ export const CLUB_DATA = {
 
   // Partenaires
   partners: [
-    { name: 'Brasserie des 4 Routes', logo: getAssetPath('images/logo bdr4.png'), isMain: true },
-    { name: 'Ville de Drancy', logo: getAssetPath('images/logo-drancy.svg.png'), isMain: true },
-    { name: 'FFF', logo: getAssetPath('images/logo fff.png'), isMain: true },
+    { name: 'Brasserie des 4 Routes', logo: getAssetPath('assets/logos/partenaires/brasserie-4-routes.png'), isMain: true },
+    { name: 'Ville de Drancy', logo: getAssetPath('assets/logos/partenaires/ville-drancy.png'), isMain: true },
+    { name: 'FFF', logo: getAssetPath('assets/logos/fff.svg'), isMain: true },
   ],
 
   // Coordonnées

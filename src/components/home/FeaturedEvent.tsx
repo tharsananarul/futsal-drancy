@@ -51,32 +51,33 @@ export default function FeaturedEvent() {
               <div className="flex items-start space-x-4 p-6 bg-white/5 rounded-2xl border border-white/5">
                 <Calendar className="text-accent shrink-0" size={24} />
                 <div>
-                  <h4 className="text-white font-black uppercase text-xs mb-1">Dates</h4>
-                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest">Du 25 au 31 Août 2025</p>
+                  <h4 className="text-white font-black uppercase text-sm mb-1">Dates</h4>
+                  <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Du 25 au 31 Août 2025</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4 p-6 bg-white/5 rounded-2xl border border-white/5">
                 <MapPin className="text-accent shrink-0" size={24} />
                 <div>
-                  <h4 className="text-white font-black uppercase text-xs mb-1">Lieu</h4>
-                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest">Gymnase Joliot Curie</p>
+                  <h4 className="text-white font-black uppercase text-sm mb-1">Lieu</h4>
+                  <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Gymnase Joliot Curie</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4 p-6 bg-white/5 rounded-2xl border border-white/5">
                 <Users className="text-accent shrink-0" size={24} />
                 <div>
-                  <h4 className="text-white font-black uppercase text-xs mb-1">Format</h4>
-                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest">5 joueuses par équipe</p>
+                  <h4 className="text-white font-black uppercase text-sm mb-1">Format</h4>
+                  <p className="text-white/40 text-xs font-bold uppercase tracking-widest">5 joueuses par équipe</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4 p-6 bg-white/5 rounded-2xl border border-white/5">
                 <Users className="text-accent shrink-0" size={24} />
                 <div>
-                  <h4 className="text-white font-black uppercase text-xs mb-1">Ambiance</h4>
-                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest">18h à 22h30 chaque soir</p>
+                  <h4 className="text-white font-black uppercase text-sm mb-1">Ambiance</h4>
+                  <p className="text-white/40 text-xs font-bold uppercase tracking-widest">18h à 22h30 chaque soir</p>
                 </div>
               </div>
             </div>
+
 
             <button className="btn-accent w-full md:w-auto">
               <span>Voir les photos de l'événement</span>
