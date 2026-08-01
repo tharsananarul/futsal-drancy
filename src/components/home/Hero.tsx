@@ -65,23 +65,27 @@ export default function Hero() {
           </motion.div>
           
           {/* Title — stagger per word */}
-          <h1 className="text-4xl sm:text-6xl md:text-9xl lg:text-[10rem] text-white leading-[0.8] font-display font-black uppercase tracking-tighter mb-4 overflow-hidden">
-            <motion.span
-              className="block"
-              initial={{ y: "100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
-            >
-              {name.split(' ')[0]}
-            </motion.span>
-            <motion.span
-              className="block text-accent"
-              initial={{ y: "100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.55, ease: [0.33, 1, 0.68, 1] }}
-            >
-              {name.split(' ')[1]}
-            </motion.span>
+          <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[9.5rem] text-white leading-[0.9] font-display font-black uppercase tracking-tighter mb-4 py-2">
+            <span className="block overflow-hidden py-1">
+              <motion.span
+                className="block"
+                initial={{ y: "100%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
+              >
+                {name.split(' ')[0]}
+              </motion.span>
+            </span>
+            <span className="block overflow-hidden py-1">
+              <motion.span
+                className="block text-accent pb-2"
+                initial={{ y: "100%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.55, ease: [0.33, 1, 0.68, 1] }}
+              >
+                {name.split(' ')[1]}
+              </motion.span>
+            </span>
           </h1>
           
           <motion.div 
