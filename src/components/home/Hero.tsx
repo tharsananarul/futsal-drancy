@@ -13,15 +13,15 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <motion.img
           src={getAssetPath('images/IMG-20250528-WA0017.jpg')}
-          alt="Futsal Drancy"
-          className="w-full h-full object-cover object-center filter brightness-[0.4] contrast-125 saturate-110"
+          alt="Futsal Drancy Match"
+          className="w-full h-full object-cover object-center filter brightness-[0.75] contrast-110 saturate-115"
           initial={{ scale: 1.08 }}
           animate={{ scale: 1 }}
           transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }}
         />
-        {/* Stadium Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/75 to-navy-dark/90"></div>
-        <div className="absolute inset-0 bg-radial from-transparent via-navy-dark/40 to-navy-dark"></div>
+        {/* Soft Stadium Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/40 to-navy-dark/60"></div>
+        <div className="absolute inset-0 bg-radial from-transparent via-navy-dark/20 to-navy-dark/80"></div>
 
         {/* Golden Ambient Glow */}
         <motion.div
