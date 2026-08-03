@@ -42,28 +42,58 @@ export default function Hero() {
       </div>
 
       <div className="section-container relative z-10 w-full text-center space-y-10 max-w-6xl mx-auto">
-        {/* PROMINENT OFFICIAL CLUB CREST */}
+        {/* MAJESTIC OFFICIAL CLUB CREST & BADGE ASSEMBLY */}
         <motion.div
-          initial={{ opacity: 0, y: -20, scale: 0.8 }}
+          initial={{ opacity: 0, y: -20, scale: 0.85 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.7 }}
-          className="flex flex-col items-center justify-center space-y-3"
+          transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
+          className="flex flex-col items-center justify-center space-y-4"
         >
-          <div className="relative group cursor-pointer">
-            {/* Glowing Aura behind Logo */}
-            <div className="absolute inset-0 rounded-full bg-accent/30 blur-2xl group-hover:bg-accent/50 transition-all duration-500"></div>
-            
-            <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 p-2 bg-navy-dark/80 backdrop-blur-md rounded-full border-2 border-accent/40 shadow-2xl flex items-center justify-center group-hover:border-accent group-hover:scale-105 transition-all duration-500">
-              <img
-                src={getAssetPath('assets/logos/drancy-futsal.png')}
-                alt="Logo Officiel Futsal Drancy"
-                className="w-full h-full object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
-              />
+          {/* Logo Container with Flanking Gold Wings & Halo */}
+          <div className="flex items-center justify-center space-x-4 sm:space-x-8 w-full max-w-xl">
+            {/* Left Decorative Gold Wing */}
+            <motion.div 
+              className="hidden sm:flex items-center space-x-2 flex-1"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-accent/60 to-accent"></div>
+              <div className="w-2 h-2 rotate-45 bg-accent flex-shrink-0"></div>
+            </motion.div>
+
+            {/* Central Floating Logo with Glowing Gold Halo */}
+            <div className="relative group cursor-pointer flex-shrink-0">
+              {/* Intense Golden Radial Halo */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent/50 via-accent/20 to-transparent blur-3xl group-hover:scale-125 transition-all duration-700 pointer-events-none"></div>
+
+              {/* Subtle Pulsing Outer Gold Ring */}
+              <div className="absolute -inset-3 rounded-full border border-accent/20 group-hover:border-accent/40 transition-colors duration-500 pointer-events-none"></div>
+
+              {/* Clean Floating Crest Image */}
+              <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 p-2 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                <img
+                  src={getAssetPath('assets/logos/drancy-futsal.png')}
+                  alt="Blason Officiel Futsal Drancy"
+                  className="w-full h-full object-contain filter drop-shadow-[0_15px_30px_rgba(245,185,9,0.35)]"
+                />
+              </div>
             </div>
+
+            {/* Right Decorative Gold Wing */}
+            <motion.div 
+              className="hidden sm:flex items-center space-x-2 flex-1"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <div className="w-2 h-2 rotate-45 bg-accent flex-shrink-0"></div>
+              <div className="h-[2px] w-full bg-gradient-to-l from-transparent via-accent/60 to-accent"></div>
+            </motion.div>
           </div>
 
-          {/* Official League Badge */}
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-accent/30 px-4 py-1.5 rounded-full shadow-lg">
+          {/* Unified Official League Badge */}
+          <div className="inline-flex items-center space-x-2 bg-navy-dark/90 backdrop-blur-xl border border-accent/40 px-5 py-2 rounded-full shadow-2xl shadow-accent/10 hover:border-accent transition-colors">
             <Sparkles size={14} className="text-accent animate-pulse" />
             <span className="text-white font-black tracking-[0.25em] uppercase text-[10px] sm:text-xs">
               Club Officiel FFF • Régional 2 • Saison {season}
