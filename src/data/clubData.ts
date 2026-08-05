@@ -4,7 +4,7 @@ import planningData from './planning.json';
 
 export const CLUB_DATA = {
   name: "Futsal Drancy",
-  season: "2025-2026",
+  season: "2026-2027",
   motto: "Passion, Formation, Performance",
   presentation: "Référence du futsal en Seine-Saint-Denis, le Futsal Drancy mise sur la formation d'excellence des jeunes, un engagement communautaire fort et un esprit collectif inébranlable.",
   
@@ -42,7 +42,7 @@ export const CLUB_DATA = {
 
   // Coordonnées
   contact: {
-    address: "85 Rue Auguste Blanqui, 93700 Drancy",
+    address: "Gymnase Joliot-Curie, 85 Rue Auguste Blanqui, 93700 Drancy",
     phone: "01 48 96 50 00",
     email: "550738@lpiff.fr",
     socials: {
@@ -58,10 +58,10 @@ export const CLUB_DATA = {
     {
       id: 0,
       title: '1ère Édition CAN Féminine Futsal',
-      date: '31 Juillet 2025',
+      date: '31 Juillet 2026',
       category: 'Événement',
       image: getAssetPath('images/post can féminine.png'),
-      excerpt: 'Une semaine de compétition, de passion et de mise en lumière du futsal au féminin ! Rejoignez-nous au Gymnase Joliot Curie.'
+      excerpt: 'Une semaine de compétition, de passion et de mise en lumière du futsal au féminin ! Rejoignez-nous au Gymnase Joliot-Curie.'
     },
     {
       id: 1,
@@ -88,7 +88,7 @@ export const CLUB_DATA = {
       date: '15 AVRIL 2026',
       author: 'Direction Sportive',
       image: getAssetPath('images/6.png'),
-      excerpt: 'Les inscriptions pour la saison 2025-2026 sont officiellement ouvertes.'
+      excerpt: 'Les inscriptions pour la saison 2026-2027 sont officiellement ouvertes.'
     },
     {
       id: 4,

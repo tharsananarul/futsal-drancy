@@ -24,7 +24,7 @@ export default function FeaturedEvent() {
             {/* Floating Badge */}
             <div className="absolute -top-6 -right-6 bg-accent text-navy-dark px-8 py-8 rounded-full font-display font-black text-center shadow-xl rotate-12">
               <span className="block text-sm uppercase">Août</span>
-              <span className="block text-3xl">2025</span>
+              <span className="block text-3xl">2026</span>
             </div>
           </motion.div>
 
@@ -52,7 +52,7 @@ export default function FeaturedEvent() {
                 <Calendar className="text-accent shrink-0" size={24} />
                 <div>
                   <h4 className="text-white font-black uppercase text-sm mb-1">Dates</h4>
-                  <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Du 25 au 31 Août 2025</p>
+                  <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Du 25 au 31 Août 2026</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4 p-6 bg-white/5 rounded-2xl border border-white/5">

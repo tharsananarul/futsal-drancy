@@ -1,57 +1,60 @@
 import { motion } from 'motion/react';
 import { CLUB_DATA } from '../../data/clubData';
-import { List, Filter } from 'lucide-react';
+import { List, Calendar as CalendarIcon } from 'lucide-react';
 
 export default function CalendarSection() {
   const { calendar } = CLUB_DATA;
 
   return (
-    <section className="bg-navy-dark py-16 md:py-24 border-b border-white/5">
-      <div className="section-container">
+    <section className="bg-navy-dark py-16 md:py-20 border-b border-white/5 relative overflow-hidden">
+      <div className="section-container relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div className="flex items-center space-x-3">
-              <List className="text-accent" size={20} />
-              <span className="text-white/60 font-black tracking-[0.3em] uppercase text-[10px]">Calendrier de la Semaine</span>
+              <List className="text-accent shrink-0" size={18} />
+              <span className="text-accent font-black tracking-[0.25em] uppercase text-fluid-badge">Calendrier de la Semaine</span>
             </div>
-            <h2 className="text-3xl md:text-6xl text-white font-display font-black uppercase tracking-tighter">
+            <h2 className="text-fluid-h2 text-white font-display font-black uppercase tracking-tight">
               Planning <span className="text-accent">Complet</span>
             </h2>
           </div>
-          <div className="flex items-center space-x-4">
-            <button className="flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 text-[10px] font-black uppercase tracking-widest text-white hover:bg-accent hover:text-navy-dark transition-colors">
-              <Filter size={14} />
-              <span>Filtrer</span>
-            </button>
-          </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {calendar.map((cat, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="space-y-6"
+              transition={{ delay: idx * 0.1, duration: 0.4 }}
+              className="space-y-4"
             >
-              <div className="bg-white/5 border border-white/10 text-white p-4 flex items-center justify-between">
-                <span className="font-black uppercase tracking-widest">{cat.category}</span>
-                <span className="text-[10px] text-accent font-black uppercase">{cat.matches.length} Matchs</span>
+              <div className="glass-card rounded-2xl p-4 flex items-center justify-between border border-white/10">
+                <span className="font-display font-bold text-sm uppercase tracking-wide text-white">{cat.category}</span>
+                <span className="text-[10px] bg-accent/15 text-accent font-black px-2.5 py-1 rounded-full uppercase border border-accent/20">
+                  {cat.matches.length} Matchs
+                </span>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-3 overflow-x-auto">
                 {cat.matches.map((match, mIdx) => (
-                  <div key={mIdx} className="bg-white/[0.03] p-4 border-l-4 border-accent flex items-center justify-between group hover:bg-white/[0.08] hover:shadow-md transition-all">
+                  <div 
+                    key={mIdx} 
+                    className="glass-card card-hover p-4 rounded-2xl border-l-4 border-l-accent border border-white/10 flex items-center justify-between group transition-all"
+                  >
                     <div className="space-y-1">
                       <div className="flex items-center space-x-2">
-                        <span className="text-[10px] font-black text-white/40 uppercase">{match.date} • {match.time}</span>
-                        <span className="text-[8px] bg-white/10 px-2 py-0.5 rounded text-white/60 font-bold uppercase">{match.type}</span>
+                        <span className="text-[10px] font-bold text-accent uppercase">{match.date} • {match.time}</span>
+                        <span className="text-[8px] bg-white/10 px-2 py-0.5 rounded-full text-white/70 font-black uppercase">{match.type}</span>
                       </div>
-                      <p className="text-sm font-black uppercase text-white group-hover:text-accent transition-colors">VS {match.opponent}</p>
+                      <p className="text-xs md:text-sm font-display font-bold uppercase text-white group-hover:text-accent transition-colors">
+                        VS {match.opponent}
+                      </p>
                     </div>
-                    <span className="text-[9px] font-black uppercase tracking-tighter text-white/30">{match.location}</span>
+                    <span className="text-[9px] font-bold uppercase tracking-wider text-gray-400 shrink-0 ml-2">
+                      {match.location}
+                    </span>
                   </div>
                 ))}
               </div>

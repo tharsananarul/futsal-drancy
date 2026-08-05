@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Shield, Trophy, FileText, Download, UsersRound, UserCheck, Calendar, ArrowRight, UserCircle, Briefcase, Award } from 'lucide-react';
 import { CLUB_DATA } from '../data/clubData';
 import { getAssetPath } from '../utils/assets';
+import HoverCard from '../components/ui/HoverCard';
 
 export default function Club() {
   const [activeTab, setActiveTab] = useState<'histoire' | 'bureau' | 'staff' | 'inscription'>('histoire');
@@ -50,7 +51,7 @@ export default function Club() {
     { year: '2012', title: 'Création de la Section Féminine', description: 'Ouverture de la première section féminine pour encourager la pratique du futsal féminin dans le département.' },
     { year: '2018', title: 'Développement de l\'École de Foot', description: 'Structuration des catégories jeunes de U7 à U15, labellisée par la fédération pour la qualité de son encadrement.' },
     { year: '2024', title: 'Partenariat avec le Red Star', description: "Mise en place d'une synergie sportive historique avec le Red Star FC pour faciliter la passerelle foot à 11 / futsal." },
-    { year: '2025', title: 'Saison Historique R2', description: 'Engagement renforcé de nos séniors masculines et féminines au niveau régional avec des objectifs de montée.' },
+    { year: '2026', title: 'Saison Historique R2', description: 'Engagement renforcé de nos séniors masculines et féminines au niveau régional avec des objectifs de montée.' },
   ];
 
   return (
@@ -173,15 +174,15 @@ export default function Club() {
                           )}
                         </div>
                         
-                        <div className="glass-card card-hover rounded-3xl p-6 md:p-8 relative overflow-hidden">
+                        <div className="glass-card card-hover rounded-3xl p-4 md:p-8 relative overflow-hidden">
                           <div className="absolute top-0 right-0 w-32 h-32 bg-accent/3 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                           
-                          <span className="text-accent font-display font-bold text-3xl lg:text-4xl tracking-wider">{item.year}</span>
-                          <h4 className="text-white font-display font-bold uppercase text-lg lg:text-xl mt-1 mb-2 tracking-wide flex items-center gap-2">
+                          <span className="text-accent font-display font-bold text-2xl md:text-4xl tracking-wider">{item.year}</span>
+                          <h4 className="text-white font-display font-bold uppercase text-base md:text-xl mt-1 mb-2 tracking-wide flex items-center gap-2">
                             {item.title}
                             <ArrowRight size={14} className="text-accent opacity-0 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all" />
                           </h4>
-                          <p className="text-gray-400 text-sm lg:text-base leading-relaxed">{item.description}</p>
+                          <p className="text-gray-400 text-xs md:text-base leading-relaxed">{item.description}</p>
                         </div>
 
                       </motion.div>
@@ -293,55 +294,19 @@ export default function Club() {
                   <p className="text-white/40 text-[10px] md:text-xs lg:text-sm uppercase tracking-widest font-bold">L'équipe pédagogique et sportive encadrant nos licenciés.</p>
                 </div>
 
-                {/* Staff Cards Bento Layout (2 columns on mobile, 3 on PC) */}
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-
+                {/* Staff Hover Cards Grid (1 col on mobile, 2 on tablet, 3 on desktop) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {technicalStaff.map((staff, idx) => (
-                    <motion.div 
-                      key={idx} 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.05, duration: 0.5 }}
-                      className="glass-card rounded-2xl md:rounded-[2rem] p-4 md:p-8 flex flex-col justify-between hover:border-accent/20 hover:shadow-2xl hover:shadow-accent/5 transition-all duration-500 group relative overflow-hidden"
-                    >
-                      {/* Top Accent Strip */}
-                      <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${staff.color.includes('green') ? 'from-green-500/50 to-emerald-500/50' : staff.color.includes('pink') ? 'from-pink-500/50 to-rose-500/50' : staff.color.includes('blue') ? 'from-blue-500/50 to-indigo-500/50' : staff.color.includes('purple') ? 'from-purple-500/50 to-violet-500/50' : staff.color.includes('yellow') || staff.color.includes('amber') ? 'from-yellow-500/50 to-amber-500/50' : 'from-accent/50 to-yellow-500/50'}`}></div>
-
-                      <div className="space-y-3 md:space-y-4">
-                        <div className="flex items-center justify-between">
-                          <span className="text-[8px] md:text-xs uppercase font-black tracking-widest text-white/30 truncate max-w-[80%]">{staff.category}</span>
-                          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
-                        </div>
-                        
-                        <div className="space-y-1 md:space-y-2">
-                          <h3 className="text-sm md:text-2xl lg:text-3xl font-display font-bold uppercase text-white leading-tight tracking-wide">{staff.name}</h3>
-                          <p className="text-[9px] md:text-sm lg:text-base uppercase font-bold tracking-wider text-accent/80 flex items-center gap-1">
-                            <Briefcase size={10} className="md:size-3.5" />
-                            <span className="truncate">{staff.role}</span>
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Educators inside categories if present */}
-                      {'staff' in staff ? (
-                        <div className="mt-3 md:mt-6 pt-3 md:pt-4 border-t border-white/5 space-y-1.5 md:space-y-2.5">
-                          <span className="text-[7px] md:text-xs uppercase font-black text-white/30 tracking-wider block">Éducateurs :</span>
-                          <div className="flex flex-wrap gap-1">
-                            {(staff as any).staff.map((name: string, i: number) => (
-                              <span key={i} className="bg-white/5 border border-white/10 text-white font-bold text-[8px] md:text-xs px-2 py-0.5 md:px-3 md:py-1.5 rounded-lg uppercase tracking-wider hover:bg-accent hover:text-navy-dark hover:border-accent transition-all duration-300 cursor-default">
-                                {name}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="mt-6 md:mt-8 pt-3 md:pt-4 border-t border-white/5 flex items-center justify-between text-[7px] md:text-xs font-black uppercase text-white/15 tracking-[0.2em]">
-                          <span>DRANCY</span>
-                          <span>STAFF</span>
-                        </div>
-                      )}
-                    </motion.div>
+                    <HoverCard
+                      key={idx}
+                      title={staff.name}
+                      subtitle={staff.role}
+                      badge={staff.category}
+                      email="550738@lpiff.fr"
+                      image={getAssetPath(`images/${(idx % 10) + 1}.png`)}
+                      aspectRatio="aspect-video"
+                      description={'staff' in staff ? `Éducateurs : ${(staff as any).staff.join(', ')}` : `Encadrement technique Futsal Drancy pour ${staff.category}.`}
+                    />
                   ))}
                 </div>
               </div>

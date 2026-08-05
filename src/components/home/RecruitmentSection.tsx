@@ -22,7 +22,7 @@ export default function RecruitmentSection() {
           >
             <div className="inline-flex items-center space-x-3 bg-navy-dark text-white px-6 py-2 rounded-full">
               <UserPlus size={16} className="text-accent" />
-              <span className="text-[10px] font-black uppercase tracking-widest">Inscriptions 2025-2026</span>
+              <span className="text-[10px] font-black uppercase tracking-widest">Inscriptions 2026-2027</span>
             </div>
             
             <h2 className="text-6xl md:text-8xl lg:text-9xl text-navy-dark font-display font-black uppercase tracking-tighter leading-[0.8]">

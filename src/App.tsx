@@ -1,6 +1,8 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
+import Histoire from './pages/Histoire';
+import Organigramme from './pages/Organigramme';
 import Club from './pages/Club';
 import Team from './pages/Team';
 import CalendarPage from './pages/Calendar';
@@ -19,7 +21,9 @@ function App() {
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/club" element={<Club />} />
+            <Route path="/histoire" element={<Histoire />} />
+            <Route path="/organigramme" element={<Organigramme />} />
+            <Route path="/club" element={<Histoire />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/team" element={<Team />} />
             <Route path="/calendar" element={<CalendarPage />} />

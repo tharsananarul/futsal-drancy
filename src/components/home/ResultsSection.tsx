@@ -4,7 +4,8 @@ import { Trophy, Award } from 'lucide-react';
 import { ClubLogo } from '../ui/ClubLogo';
 
 export default function ResultsSection() {
-  const { recentResults } = CLUB_DATA;
+  // Always display the 3 latest match results
+  const recentResults = CLUB_DATA.recentResults.slice(0, 3);
 
   return (
     <section className="bg-navy-dark py-16 md:py-24 border-b border-white/5 overflow-hidden">
@@ -19,18 +20,18 @@ export default function ResultsSection() {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <Trophy className="text-accent" size={20} />
-              <span className="text-accent font-black tracking-[0.3em] uppercase text-[10px]">Information Sportive</span>
+              <span className="text-accent font-black tracking-[0.3em] uppercase text-[10px]">3 Derniers Résultats Officiels</span>
             </div>
             <h2 className="text-3xl md:text-6xl text-white font-display font-black uppercase tracking-tighter">
               Derniers <span className="text-accent">Résultats</span>
             </h2>
           </div>
           <p className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] max-w-xs">
-            Mise à jour en temps réel des performances de toutes nos catégories.
+            Aperçu dynamique des 3 dernières rencontres disputées par nos équipes.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {recentResults.map((result, index) => (
             <motion.div
               key={index}

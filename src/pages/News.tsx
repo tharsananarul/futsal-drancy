@@ -16,40 +16,44 @@ export default function NewsPage() {
   const actualites: Actualite[] = actualitesData;
 
   return (
-    <div className="pt-32 pb-24 bg-navy-dark min-h-screen">
-      <div className="section-container">
+    <div className="pt-28 lg:pt-36 pb-20 bg-navy-dark min-h-screen relative overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="section-container relative z-10">
         {/* Header */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center space-y-4 mb-16 mx-auto max-w-3xl"
+          transition={{ duration: 0.5 }}
+          className="text-center space-y-3 mb-12 mx-auto max-w-2xl"
         >
-          <div className="flex items-center justify-center space-x-4 mb-2">
-            <div className="w-12 h-[1px] bg-accent/30"></div>
-            <span className="text-accent font-black tracking-[0.4em] uppercase text-[9px]">Fil d'actualité</span>
-            <div className="w-12 h-[1px] bg-accent/30"></div>
+          <div className="flex items-center justify-center space-x-3 mb-1">
+            <div className="w-10 h-[1px] bg-accent/40"></div>
+            <span className="text-accent font-black tracking-[0.25em] uppercase text-fluid-badge">Fil d'actualité</span>
+            <div className="w-10 h-[1px] bg-accent/40"></div>
           </div>
-          <h1 className="text-3xl md:text-6xl lg:text-8xl text-white leading-[0.9] font-display font-black uppercase tracking-tighter">
-            ACTUALITÉS & <br/> <span className="text-accent">MÉDIAS.</span>
+          <h1 className="text-fluid-h1 text-white font-display font-black uppercase tracking-tight">
+            ACTUALITÉS & <span className="text-accent">MÉDIAS.</span>
           </h1>
-          <p className="text-gray-500 text-[10px] md:text-xs mx-auto uppercase tracking-[0.2em] font-bold">
-            Retrouvez la vie du club en images et en direct de nos réseaux.
+          <p className="text-gray-400 text-fluid-body max-w-md mx-auto font-medium">
+            Retrouvez la vie du club en images et les publications officielles de nos réseaux.
           </p>
         </motion.div>
 
-        {/* News Grid: 2 columns on mobile, 3 on tablet/desktop, centered */}
-        <div className="grid grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto gap-4 md:gap-6">
+        {/* News Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto gap-5 md:gap-6">
           {actualites.map((item, idx) => (
             <motion.article
               key={item.id}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.05 }}
-              className="bg-white/[0.02] border border-white/5 overflow-hidden flex flex-col justify-between group hover:border-accent/30 hover:bg-white/[0.04] transition-all rounded-[1.5rem]"
+              transition={{ delay: idx * 0.05, duration: 0.4 }}
+              className="glass-card card-hover overflow-hidden flex flex-col justify-between rounded-3xl border border-white/10 group"
             >
               <div className="space-y-3">
-                {/* Card Image: aspect-square and object-cover, edge-to-edge */}
+                {/* Image aspect-square object-cover */}
                 <div className="relative aspect-square overflow-hidden bg-black/20">
                   <img 
                     src={getAssetPath(item.image)} 
@@ -57,44 +61,43 @@ export default function NewsPage() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white p-1.5 rounded-full border border-white/10">
-                    <Instagram size={10} className="text-accent" />
+                  <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white p-1.5 rounded-full border border-white/15">
+                    <Instagram size={12} className="text-accent" />
                   </div>
                 </div>
 
                 {/* Text Content */}
                 <div className="space-y-2 px-4 md:px-5">
-                  {/* Meta info */}
-                  <div className="flex items-center justify-between text-[9px] md:text-[10px] lg:text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">
+                  <div className="flex items-center justify-between text-[10px] text-gray-400 font-bold uppercase tracking-wider">
                     <span className="flex items-center space-x-1.5">
-                      <Calendar size={12} className="text-accent/60" />
+                      <Calendar size={11} className="text-accent/70" />
                       <span>{item.date}</span>
                     </span>
-                    <span className="text-accent/80">#instagram</span>
+                    <span className="text-accent/80 font-black">#instagram</span>
                   </div>
 
-                  <h3 className="text-sm md:text-base lg:text-lg text-white font-display font-black uppercase leading-tight group-hover:text-accent transition-colors line-clamp-1">
+                  <h3 className="text-base text-white font-display font-black uppercase leading-tight group-hover:text-accent transition-colors line-clamp-1">
                     {item.title}
                   </h3>
-                  <p className="text-gray-400 text-xs md:text-sm lg:text-[14px] leading-relaxed line-clamp-2">
+                  <p className="text-gray-300 text-xs leading-relaxed line-clamp-2 font-medium">
                     {item.excerpt}
                   </p>
                 </div>
               </div>
 
-              {/* Card Footer Actions */}
-              <div className="p-4 md:p-5 pt-0 mt-4 flex items-center justify-between">
+              {/* Card Footer */}
+              <div className="p-4 md:p-5 pt-0 mt-3 flex items-center justify-between">
                 <a 
                   href={item.instagramUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-1.5 text-accent font-black text-[9px] md:text-[10px] lg:text-xs uppercase tracking-[0.25em] group/btn"
+                  className="flex items-center space-x-1.5 text-accent font-black text-[10px] uppercase tracking-widest group/btn"
                 >
                   <span>Voir le post</span>
-                  <ArrowUpRight size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight size={13} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </a>
                 
-                <div className="flex items-center space-x-2 text-gray-500">
+                <div className="flex items-center text-gray-400">
                   <Heart size={14} className="hover:text-red-500 cursor-pointer transition-colors" />
                 </div>
               </div>
@@ -105,7 +108,3 @@ export default function NewsPage() {
     </div>
   );
 }
-
-
-
-

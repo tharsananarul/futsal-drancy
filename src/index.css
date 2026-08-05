@@ -10,8 +10,6 @@
   --color-navy-dark: #041a3a;
   --color-accent: #f5b909;
   --color-accent-dark: #d4a007;
-  
-  --spacing-p-header: 80px;
 
   /* Custom animations */
   @keyframes slide-up {
@@ -49,112 +47,92 @@
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
-  @keyframes scale-in {
-    from { opacity: 0; transform: scale(0.92); }
-    to { opacity: 1; transform: scale(1); }
-  }
-
-  @keyframes glow-pulse {
-    0%, 100% { box-shadow: 0 0 20px rgba(245, 185, 9, 0.1); }
-    50% { box-shadow: 0 0 40px rgba(245, 185, 9, 0.25), 0 0 80px rgba(245, 185, 9, 0.1); }
-  }
 }
-
 
 @layer base {
   body {
-    @apply bg-navy-dark text-white font-sans antialiased selection:bg-accent/30 overflow-x-hidden text-sm md:text-base;
-  }
-  
-  h1 {
-    @apply font-display font-bold uppercase tracking-wide leading-[0.95];
-  }
-  
-  h2 {
-    @apply font-display font-bold uppercase tracking-wide leading-none;
-  }
-  
-  h3 {
-    @apply font-display font-medium uppercase tracking-wide leading-snug;
-  }
-  
-  p {
-    @apply text-white/70 font-sans font-normal leading-relaxed text-sm md:text-base;
+    @apply bg-navy-dark text-white font-sans antialiased selection:bg-accent/30 overflow-x-hidden text-xs md:text-sm lg:text-base;
   }
 
-  /* Global tracking override for headings - Oswald looks best with normal to wide spacing, never tight */
+  h1 {
+    @apply font-display font-bold uppercase tracking-wide leading-[0.92] text-3xl md:text-5xl lg:text-7xl;
+  }
+
+  h2 {
+    @apply font-display font-bold uppercase tracking-wide leading-none text-2xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply font-display font-medium uppercase tracking-wide leading-snug text-lg md:text-2xl;
+  }
+
+  p {
+    @apply text-white/70 font-sans font-normal leading-relaxed text-[11px] md:text-sm lg:text-base;
+  }
+
   .tracking-tighter {
-    letter-spacing: 0.03em !important;
+    letter-spacing: 0.02em !important;
   }
 }
 
 @layer components {
+  /* Fluid Sizing Utilities with Compact Mobile Base */
+  .text-fluid-hero {
+    font-size: clamp(1.85rem, 5vw + 0.5rem, 6rem);
+  }
+
+  .text-fluid-h1 {
+    font-size: clamp(1.6rem, 4vw + 0.5rem, 4.2rem);
+  }
+
+  .text-fluid-h2 {
+    font-size: clamp(1.25rem, 2.5vw + 0.4rem, 3rem);
+  }
+
+  .text-fluid-h3 {
+    font-size: clamp(1rem, 1.8vw + 0.3rem, 1.8rem);
+  }
+
+  .text-fluid-body {
+    font-size: clamp(0.75rem, 0.75rem + 0.2vw, 1rem);
+  }
+
+  .text-fluid-badge {
+    font-size: clamp(0.6rem, 0.45vw + 0.45rem, 0.8rem);
+  }
+
+  .w-fluid-logo {
+    width: clamp(5rem, 10vw, 10rem);
+    height: clamp(5rem, 10vw, 10rem);
+  }
+
   .section-container {
-    @apply max-w-[1600px] mx-auto px-6 md:px-12 py-12 md:py-24;
+    @apply max-w-[1600px] mx-auto px-3.5 sm:px-6 lg:px-12 py-6 sm:py-12 lg:py-20;
   }
 
   .glass-card {
     @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl;
   }
 
+  /* 21st.dev Micro-interaction & Tactile Buttons */
   .btn-accent {
-    @apply bg-accent hover:bg-white text-navy-dark font-black px-8 py-4 rounded-none transition-all duration-500 uppercase tracking-widest text-[10px] shadow-2xl shadow-accent/20 active:scale-95 flex items-center justify-center;
+    @apply bg-accent hover:bg-white text-navy-dark font-black rounded-full transition-all duration-300 ease-in-out uppercase tracking-wider shadow-lg shadow-accent/20 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/30 active:scale-95 flex items-center justify-center cursor-pointer px-4 py-2 text-xs md:px-6 md:py-3 md:text-sm lg:px-8 lg:py-3.5 lg:text-base;
   }
 
   .btn-outline {
-    @apply border-2 border-accent/30 text-white hover:bg-accent hover:text-navy-dark hover:border-accent font-black px-8 py-4 rounded-none transition-all duration-500 uppercase tracking-widest text-[10px] active:scale-95 flex items-center justify-center;
-  }
-
-  .hero-gradient {
-    @apply bg-linear-to-br from-[#041a3a] via-[#06244f] to-[#0a3d82];
+    @apply border-2 border-accent/40 text-white hover:bg-accent hover:text-navy-dark hover:border-accent font-black rounded-full transition-all duration-300 ease-in-out uppercase tracking-wider backdrop-blur-md hover:-translate-y-1 hover:shadow-lg active:scale-95 flex items-center justify-center cursor-pointer px-4 py-2 text-xs md:px-6 md:py-3 md:text-sm lg:px-8 lg:py-3.5 lg:text-base;
   }
 
   .card-hover {
-    @apply transition-all duration-500 hover:translate-y-[-8px] hover:shadow-[0_20px_50px_rgba(245,185,9,0.08)] hover:bg-white/10 hover:border-accent/20;
-  }
-
-  .accent-glow {
-    box-shadow: 0 0 40px rgba(245, 185, 9, 0.15), 0 0 80px rgba(245, 185, 9, 0.05);
-  }
-
-  .accent-border-glow {
-    border-color: rgba(245, 185, 9, 0.4);
-    box-shadow: 0 0 0 1px rgba(245, 185, 9, 0.1), inset 0 0 20px rgba(245, 185, 9, 0.03);
+    @apply transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(245,185,9,0.12)] hover:bg-white/10 hover:border-accent/30;
   }
 
   .text-glow {
-    text-shadow: 0 0 20px rgba(245, 185, 9, 0.3);
+    text-shadow: 0 0 20px rgba(245, 185, 9, 0.35);
   }
 
-  .animate-marquee {
-    animation: marquee 25s linear infinite;
-  }
-
-  .animate-glow-pulse {
-    animation: glow-pulse 3s ease-in-out infinite;
-  }
-
-  .animate-fade-in-up {
-    animation: fade-in-up 0.6s cubic-bezier(0.33, 1, 0.68, 1) both;
-  }
-
-  .animate-scale-in {
-    animation: scale-in 0.5s cubic-bezier(0.33, 1, 0.68, 1) both;
-  }
-
-  .shimmer-text {
-    background: linear-gradient(90deg, #ffffff 0%, #f5b909 40%, #ffffff 60%, #f5b909 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: shimmer 4s linear infinite;
-  }
-
-  /* Scrollbar styling with accent */
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
     background: #041a3a;
@@ -167,4 +145,3 @@
     background: rgba(245, 185, 9, 0.7);
   }
 }
-

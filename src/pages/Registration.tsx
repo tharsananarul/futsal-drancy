@@ -1,143 +1,170 @@
 import { motion } from 'motion/react';
 import { getAssetPath } from '../utils/assets';
-import { FileText, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { FileText, ArrowRight, CheckCircle2, UserPlus, HeartHandshake } from 'lucide-react';
 
 export default function Registration() {
   return (
-    <div className="pt-32 pb-24 bg-navy-dark min-h-screen">
-      <div className="section-container">
+    <div className="pt-28 lg:pt-36 pb-20 bg-navy-dark min-h-screen relative overflow-hidden">
+      {/* Background lights */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/20 rounded-full blur-[160px] pointer-events-none" />
+
+      <div className="section-container relative z-10">
+        {/* Header */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center space-y-4 mb-16 mx-auto max-w-3xl"
+          transition={{ duration: 0.5 }}
+          className="text-center space-y-3 mb-12 mx-auto max-w-2xl"
         >
-          <div className="flex items-center justify-center space-x-4 mb-2">
-            <div className="w-12 h-[1px] bg-accent/30"></div>
-            <span className="text-accent font-black tracking-[0.4em] uppercase text-[9px]">Saison 2025-2026</span>
-            <div className="w-12 h-[1px] bg-accent/30"></div>
+          <div className="flex items-center justify-center space-x-3 mb-1">
+            <div className="w-8 h-[1px] bg-accent/40" />
+            <span className="text-accent font-black tracking-[0.25em] uppercase text-fluid-badge">Saison 2026-2027</span>
+            <div className="w-8 h-[1px] bg-accent/40" />
           </div>
-          <h1 className="text-3xl md:text-6xl lg:text-8xl text-white leading-[0.9] font-display font-black uppercase tracking-tighter">
-            REJOINDRE LA <br/> <span className="text-accent">FAMILLE.</span>
+          <h1 className="text-fluid-h1 text-white font-display font-black uppercase tracking-tight">
+            INSCRIPTION & <span className="text-accent">TARIFS.</span>
           </h1>
+          <p className="text-gray-400 text-fluid-body max-w-md mx-auto font-medium">
+            Rejoignez le Futsal Drancy. Suivez le guide ci-dessous pour valider votre licence.
+          </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="glass-card p-10 rounded-2xl flex flex-col items-center text-center">
-            <span className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6">
-              <span className="text-3xl font-display font-black text-accent">1</span>
-            </span>
-            <h3 className="text-2xl text-white font-black uppercase mb-4">Télécharger</h3>
-            <p className="text-gray-400 text-sm leading-relaxed uppercase tracking-widest">
-              Téléchargez et imprimez le dossier d'inscription officiel comprenant la licence et la fiche médicale.
-            </p>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="glass-card p-10 rounded-2xl flex flex-col items-center text-center">
-            <span className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6">
-              <span className="text-3xl font-display font-black text-accent">2</span>
-            </span>
-            <h3 className="text-2xl text-white font-black uppercase mb-4">Compléter</h3>
-            <p className="text-gray-400 text-sm leading-relaxed uppercase tracking-widest">
-              Remplissez minutieusement tous les documents et préparez les pièces justificatives demandées (photos, CI).
-            </p>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="glass-card p-10 rounded-2xl flex flex-col items-center text-center border-accent/20 relative overflow-hidden">
-            <div className="absolute top-0 w-full h-1 bg-accent"></div>
-            <span className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6">
-              <span className="text-3xl font-display font-black text-accent">3</span>
-            </span>
-            <h3 className="text-2xl text-white font-black uppercase mb-4">Déposer</h3>
-            <p className="text-gray-400 text-sm leading-relaxed uppercase tracking-widest">
-              Déposez votre dossier complet lors de l'une de nos permanences au Gymnase Jaurès.
-            </p>
-          </motion.div>
+        {/* Timeline Process */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">
+          {[
+            { step: '1', title: 'Télécharger', desc: 'Récupérez la fiche d\'inscription FFF et le questionnaire de santé.', highlight: false },
+            { step: '2', title: 'Remplir', desc: 'Complétez les documents et joignez votre certificat médical.', highlight: false },
+            { step: '3', title: 'Déposer', desc: 'Déposez votre dossier complet avec le règlement lors des permanences au Gymnase Joliot-Curie.', highlight: true }
+          ].map((item, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1, duration: 0.4 }}
+              className={`glass-card p-6 md:p-7 rounded-3xl flex flex-col items-center text-center relative overflow-hidden border border-white/10 ${
+                item.highlight ? 'border-accent/40 bg-accent/[0.04]' : ''
+              }`}
+            >
+              {item.highlight && <div className="absolute top-0 inset-x-0 h-1 bg-accent" />}
+              <span className="w-11 h-11 md:w-12 md:h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mb-4">
+                <span className="text-lg md:text-xl font-display font-black text-accent">{item.step}</span>
+              </span>
+              <h3 className="text-lg md:text-xl text-white font-display font-bold uppercase mb-2 tracking-wide">
+                {item.title}
+              </h3>
+              <p className="text-gray-300 text-xs leading-relaxed font-medium">
+                {item.desc}
+              </p>
+            </motion.div>
+          ))}
         </div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="glass-card p-12 rounded-2xl md:flex items-center justify-between mb-20 bg-accent/5 border-l-4 border-l-accent">
-          <div className="space-y-4 mb-8 md:mb-0">
-            <h3 className="text-3xl text-white font-black uppercase">Dossier d'Inscription</h3>
-            <p className="text-gray-400 text-sm uppercase tracking-widest">Format PDF - 2.4 Mo</p>
+        {/* Download Box */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35, duration: 0.4 }}
+          className="glass-card p-6 md:p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between mb-16 max-w-4xl mx-auto bg-accent/5 border border-accent/25 gap-4"
+        >
+          <div className="space-y-1 text-center md:text-left">
+            <h3 className="text-lg md:text-xl text-white font-display font-black uppercase tracking-wide">
+              Dossier d'Inscription Officiel
+            </h3>
+            <p className="text-gray-400 text-xs font-medium">Format PDF imprimable (Licence FFF & Fiche Club)</p>
           </div>
           <a 
             href={getAssetPath('dossier-inscription.pdf')}
             download="dossier-inscription-futsal-drancy.pdf"
-            className="btn-accent flex items-center space-x-3 w-full md:w-auto justify-center"
+            className="btn-accent space-x-2 shrink-0 cursor-pointer w-full md:w-auto"
           >
-            <FileText size={18} />
+            <FileText size={16} />
             <span>Télécharger le dossier</span>
           </a>
         </motion.div>
 
-        <div className="space-y-12">
-          <div className="text-center">
-            <h2 className="text-4xl text-white font-black uppercase">Tarifs des Licences</h2>
-            <div className="w-20 h-1 bg-accent mx-auto mt-6"></div>
+        {/* Tariffs Section */}
+        <div className="space-y-8 max-w-4xl mx-auto mb-20">
+          <div className="text-center space-y-2">
+            <h2 className="text-fluid-h2 text-white font-display font-black uppercase">
+              Tarifs des <span className="text-accent">Licences</span>
+            </h2>
+            <p className="text-gray-400 text-xs font-medium">Cotisation annuelle comprenant le pack équipement officiel</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="glass-card p-8 rounded-2xl">
-              <div className="flex justify-between items-start mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="glass-card p-6 md:p-7 rounded-3xl border border-white/10">
+              <div className="flex justify-between items-start mb-4 pb-4 border-b border-white/5">
                 <div>
-                  <h4 className="text-2xl text-white font-black uppercase mb-1">École de Futsal</h4>
+                  <h4 className="text-lg md:text-xl text-white font-display font-bold uppercase">École de Futsal</h4>
                   <span className="text-[10px] text-accent uppercase tracking-widest font-black">U7 à U13</span>
                 </div>
-                <span className="text-4xl font-display font-black text-white">160€</span>
+                <span className="text-2xl md:text-3xl font-display font-black text-white">160€</span>
               </div>
-              <ul className="space-y-3">
-                <li className="flex items-center text-gray-400 text-sm font-medium"><CheckCircle2 size={16} className="text-accent mr-3" /> Pack équipement inclus</li>
-                <li className="flex items-center text-gray-400 text-sm font-medium"><CheckCircle2 size={16} className="text-accent mr-3" /> 2 entraînements par semaine</li>
-                <li className="flex items-center text-gray-400 text-sm font-medium"><CheckCircle2 size={16} className="text-accent mr-3" /> Compétitions le weekend</li>
+              <ul className="space-y-2.5">
+                <li className="flex items-center text-gray-300 text-xs font-medium"><CheckCircle2 size={14} className="text-accent mr-2.5 shrink-0" /> Pack équipement complet inclus</li>
+                <li className="flex items-center text-gray-300 text-xs font-medium"><CheckCircle2 size={14} className="text-accent mr-2.5 shrink-0" /> 2 entraînements hebdomadaires</li>
+                <li className="flex items-center text-gray-300 text-xs font-medium"><CheckCircle2 size={14} className="text-accent mr-2.5 shrink-0" /> Plateau & compétition le week-end</li>
               </ul>
             </div>
 
-            <div className="glass-card p-8 rounded-2xl">
-              <div className="flex justify-between items-start mb-6">
+            <div className="glass-card p-6 md:p-7 rounded-3xl border border-white/10">
+              <div className="flex justify-between items-start mb-4 pb-4 border-b border-white/5">
                 <div>
-                  <h4 className="text-2xl text-white font-black uppercase mb-1">Pré-Formation & Compétition</h4>
-                  <span className="text-[10px] text-accent uppercase tracking-widest font-black">U14 à Seniors</span>
+                  <h4 className="text-lg md:text-xl text-white font-display font-bold uppercase">Pré-Formation & Compétition</h4>
+                  <span className="text-[10px] text-accent uppercase tracking-widest font-black">U14 à Séniors</span>
                 </div>
-                <span className="text-4xl font-display font-black text-white">180€</span>
+                <span className="text-2xl md:text-3xl font-display font-black text-white">180€</span>
               </div>
-              <ul className="space-y-3">
-                <li className="flex items-center text-gray-400 text-sm font-medium"><CheckCircle2 size={16} className="text-accent mr-3" /> Pack équipement complet</li>
-                <li className="flex items-center text-gray-400 text-sm font-medium"><CheckCircle2 size={16} className="text-accent mr-3" /> Encadrement diplômé</li>
-                <li className="flex items-center text-gray-400 text-sm font-medium"><CheckCircle2 size={16} className="text-accent mr-3" /> Suivi médical</li>
+              <ul className="space-y-2.5">
+                <li className="flex items-center text-gray-300 text-xs font-medium"><CheckCircle2 size={14} className="text-accent mr-2.5 shrink-0" /> Pack équipement compétition complet</li>
+                <li className="flex items-center text-gray-300 text-xs font-medium"><CheckCircle2 size={14} className="text-accent mr-2.5 shrink-0" /> Encadrement par coachs diplômés FFF</li>
+                <li className="flex items-center text-gray-300 text-xs font-medium"><CheckCircle2 size={14} className="text-accent mr-2.5 shrink-0" /> Suivi administratif et médical</li>
               </ul>
             </div>
           </div>
         </div>
 
-        {/* Recruitment Section */}
+        {/* Recruitment / Volunteer Section */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-32 p-12 glass-card rounded-[3rem] border-accent/20 bg-accent/5 relative overflow-hidden"
+          className="max-w-4xl mx-auto p-6 md:p-10 glass-card rounded-3xl border border-accent/20 bg-accent/5 relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 p-8 opacity-10">
-             <img src={getAssetPath('assets/logos/drancy-futsal.png')} className="w-32 h-32 object-contain" alt="" />
-          </div>
-          <div className="relative z-10 max-w-3xl">
-            <span className="text-accent font-black tracking-[0.4em] uppercase text-[10px] block mb-4">Staff & Encadrement</span>
-            <h2 className="text-4xl md:text-5xl text-white font-black uppercase leading-none mb-8">
-              VOUS VOULEZ <br/> <span className="text-accent">S'INVESTIR ?</span>
-            </h2>
-            <p className="text-white/60 text-lg mb-8 leading-relaxed">
-              Le Futsal Drancy est en constante croissance et nous recherchons activement des **bénévoles** et des **coachs** passionnés pour encadrer nos jeunes et participer au développement du club.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6">
-              <div className="bg-white/5 p-6 rounded-2xl border border-white/10 flex-1">
-                <h3 className="text-white font-bold mb-2">Devenir Coach</h3>
-                <p className="text-white/40 text-sm">Partagez votre expertise technique et formez les talents de demain.</p>
+          <div className="relative z-10 space-y-6">
+            <div className="space-y-2 text-center md:text-left">
+              <span className="text-accent font-black tracking-widest uppercase text-[10px]">REJOINDRE L'ENCADREMENT</span>
+              <h2 className="text-xl md:text-3xl text-white font-display font-black uppercase tracking-tight">
+                VOUS SOUHAITEZ <span className="text-accent">S'INVESTIR DANS LE CLUB ?</span>
+              </h2>
+              <p className="text-gray-300 text-xs md:text-sm leading-relaxed font-medium">
+                Le Futsal Drancy recherche activement des **bénévoles**, **dirigeants** et **éducateurs** passionnés pour accompagner l'essor de nos équipes et la vie associative.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white/5 p-4 md:p-5 rounded-2xl border border-white/10 flex items-start space-x-3">
+                <UserPlus size={20} className="text-accent shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-white text-sm font-bold uppercase mb-1">Devenir Coach / Éducateur</h3>
+                  <p className="text-gray-400 text-xs">Transmettez votre passion du jeu et encadrez les jeunes catégories.</p>
+                </div>
               </div>
-              <div className="bg-white/5 p-6 rounded-2xl border border-white/10 flex-1">
-                <h3 className="text-white font-bold mb-2">Être Bénévole</h3>
-                <p className="text-white/40 text-sm">Aidez à l'organisation des matchs et à la vie quotidienne du club.</p>
+              <div className="bg-white/5 p-4 md:p-5 rounded-2xl border border-white/10 flex items-start space-x-3">
+                <HeartHandshake size={20} className="text-accent shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-white text-sm font-bold uppercase mb-1">Être Bénévolat / Dirigeant</h3>
+                  <p className="text-gray-400 text-xs">Participez à la logistique, la buvette et l'accueil lors des matchs.</p>
+                </div>
               </div>
             </div>
-            <div className="mt-10">
-              <a href="mailto:550738@lpiff.fr" className="btn-accent px-10 py-4 inline-block font-black uppercase tracking-widest">Nous contacter pour postuler</a>
+
+            <div className="pt-2 text-center md:text-left">
+              <a href="mailto:550738@lpiff.fr" className="btn-accent inline-flex items-center space-x-2">
+                <span>Nous contacter pour postuler</span>
+                <ArrowRight size={14} />
+              </a>
             </div>
           </div>
         </motion.div>

@@ -180,21 +180,55 @@ export default function Boutique() {
   };
 
   return (
-    <div className="pt-32 pb-24 bg-navy-dark min-h-screen relative">
-      <div className="section-container">
+    <div className="pt-28 lg:pt-36 pb-20 bg-navy-dark min-h-screen relative overflow-hidden">
+      {/* Background lights */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="section-container relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center space-y-4 mb-16 mx-auto max-w-3xl"
+          transition={{ duration: 0.5 }}
+          className="text-center space-y-3 mb-12 mx-auto max-w-2xl"
         >
-          <div className="flex items-center justify-center space-x-4 mb-2">
-            <div className="w-12 h-[1px] bg-accent/30"></div>
-            <span className="text-accent font-black tracking-[0.4em] uppercase text-[9px]">Official Store</span>
-            <div className="w-12 h-[1px] bg-accent/30"></div>
+          <div className="flex items-center justify-center space-x-3 mb-1">
+            <div className="w-10 h-[1px] bg-accent/40"></div>
+            <span className="text-accent font-black tracking-[0.25em] uppercase text-fluid-badge">Boutique Officielle</span>
+            <div className="w-10 h-[1px] bg-accent/40"></div>
           </div>
-          <h1 className="text-3xl md:text-6xl lg:text-8xl text-white leading-[0.9] font-display font-black uppercase tracking-tighter">
-            PORTEZ NOS <br/> <span className="text-accent">COULEURS.</span>
+          <h1 className="text-fluid-h1 text-white font-display font-black uppercase tracking-tight">
+            PORTEZ NOS <span className="text-accent">COULEURS.</span>
           </h1>
+          <p className="text-gray-400 text-fluid-body max-w-md mx-auto font-medium">
+            Découvrez la collection officielle et réserver vos équipements du club.
+          </p>
+        </motion.div>
+
+        {/* Golden Store Banner */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.5 }}
+          className="mb-12 bg-accent text-navy-dark rounded-3xl p-6 md:p-8 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4 max-w-5xl mx-auto"
+        >
+          <div className="space-y-1 text-center md:text-left">
+            <span className="bg-navy-dark text-accent text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+              Collection Officielle 2026/2027
+            </span>
+            <h3 className="text-xl md:text-2xl font-display font-black uppercase leading-tight">
+              Équipements Officiels & Maillots Match
+            </h3>
+            <p className="text-navy-dark/80 text-xs font-bold">
+              Commandez vos tenues en ligne et retirez directement vos produits au gymnase.
+            </p>
+          </div>
+          <button 
+            onClick={() => setIsCartOpen(true)}
+            className="bg-navy-dark hover:bg-black text-accent font-black px-6 py-3 rounded-full text-xs uppercase tracking-widest transition-all shrink-0 cursor-pointer flex items-center space-x-2 shadow-lg"
+          >
+            <ShoppingBag size={16} />
+            <span>Mon Panier ({cart.reduce((total, item) => total + item.quantity, 0)})</span>
+          </button>
         </motion.div>
 
         {cart.length > 0 && (
@@ -256,7 +290,7 @@ export default function Boutique() {
                         {selectedSize && <span className="text-[10px] uppercase font-black text-accent">{selectedSize}</span>}
                       </div>
                       <div className="flex gap-1.5">
-                        {['XS', 'S', 'M', 'L', 'XL'].map((size) => (
+                        {['S', 'M', 'L', 'XL'].map((size) => (
                           <button
                             key={size}
                             onClick={() => handleSizeSelect(product.id, size)}
@@ -341,6 +375,13 @@ export default function Boutique() {
                 >
                   <X size={20} />
                 </button>
+              </div>
+
+              {/* HIGH CONTRAST VISUAL ALERT */}
+              <div className="mx-6 mt-4 p-4 rounded-2xl bg-amber-500/20 border-2 border-amber-400/80 shadow-[0_0_20px_rgba(245,158,11,0.2)] text-amber-200 flex items-center gap-3">
+                <p className="text-xs font-black uppercase tracking-wide leading-snug text-amber-300">
+                  ⚠️ Retrait et paiement au club uniquement. Aucune livraison n'est effectuée.
+                </p>
               </div>
 
               {!showCheckout ? (

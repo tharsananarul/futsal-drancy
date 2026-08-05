@@ -15,6 +15,23 @@ export default function Footer() {
       <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/5 blur-[100px] rounded-full pointer-events-none"></div>
       
       <div className="section-container relative z-10">
+        {/* Golden Top Banner */}
+        <div className="bg-accent text-navy-dark rounded-3xl p-6 md:p-8 shadow-2xl mb-14 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="space-y-1 text-center md:text-left">
+            <span className="bg-navy-dark text-accent text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+              Futsal Drancy 2026/2027
+            </span>
+            <h3 className="text-xl md:text-3xl font-display font-black uppercase leading-tight">
+              Rejoignez la Meute & Suivez l'Aventure
+            </h3>
+            <p className="text-navy-dark/80 text-xs md:text-sm font-bold">
+              Entraînements, compétitions et vie du club au Gymnase Joliot-Curie.
+            </p>
+          </div>
+          <NavLink to="/registration" className="bg-navy-dark hover:bg-black text-accent font-black px-6 py-3 rounded-full text-xs uppercase tracking-widest transition-all shrink-0">
+            Inscriptions Ouvertes
+          </NavLink>
+        </div>
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
           {/* Brand & Identity */}

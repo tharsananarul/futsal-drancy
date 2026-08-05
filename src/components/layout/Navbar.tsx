@@ -6,9 +6,9 @@ import { getAssetPath } from '../../utils/assets';
 
 const NAV_LINKS = [
   { name: 'Accueil', path: '/' },
-  { name: 'Le Club', path: '/club' },
+  { name: 'Histoire', path: '/histoire' },
+  { name: 'Équipe', path: '/team' },
   { name: 'Actualités', path: '/news' },
-  { name: 'Équipes', path: '/team' },
   { name: 'Calendrier', path: '/calendar' },
   { name: 'Boutique', path: '/boutique' },
   { name: 'Inscription', path: '/registration' },
@@ -54,16 +54,16 @@ export default function Navbar() {
   }, [location]);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[9999] p-2 md:p-6 pointer-events-none flex justify-center">
+    <header className="sticky top-0 left-0 right-0 z-[9999] p-2 md:p-4 backdrop-blur-xl bg-navy-dark/80 border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.4)] flex justify-center">
       {/* Outer Wrapper: Fits capsule size on mobile/tablet, stretches to full width max-w-[1500px] on PC */}
-      <div className="w-full max-w-sm md:max-w-md lg:max-w-[1500px] pointer-events-auto relative">
+      <div className="w-full max-w-sm md:max-w-md lg:max-w-[1500px] relative">
         
-        {/* Navbar: rounded-full capsule on mobile, rounded-2xl spacious bar on PC */}
+        {/* Navbar inner bar */}
         <nav 
           className={`w-full transition-all duration-500 flex items-center justify-between border ${
             scrolled 
-              ? 'bg-navy-dark/60 backdrop-blur-xl border-accent/20 shadow-[0_4px_30px_rgba(245,185,9,0.08)] py-1.5 lg:py-2.5 rounded-full lg:rounded-2xl px-4 lg:px-8' 
-              : 'bg-transparent border-transparent py-2.5 lg:py-4 rounded-full lg:rounded-2xl px-4 lg:px-8'
+              ? 'bg-navy-dark/70 backdrop-blur-2xl border-accent/20 shadow-[0_4px_30px_rgba(245,185,9,0.08)] py-1.5 lg:py-2.5 rounded-full lg:rounded-2xl px-4 lg:px-8' 
+              : 'bg-white/[0.03] backdrop-blur-lg border-white/5 py-2.5 lg:py-3.5 rounded-full lg:rounded-2xl px-4 lg:px-8'
           }`}
         >
           {/* Logo & Brand */}
@@ -209,14 +209,16 @@ export default function Navbar() {
                 >
                   S'inscrire au club
                 </NavLink>
-                <p className="text-white/30 text-[8px] font-black uppercase tracking-[0.3em] text-center">
-                  Futsal Drancy • Saison 2025/2026
-                </p>
+                <div className="pt-4 border-t border-white/5 text-center">
+                  <span className="text-[10px] font-black text-white/40 uppercase tracking-widest">
+                    Futsal Drancy • Saison 2026/2027
+                  </span>
+                </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
-    </div>
+    </header>
   );
 }
